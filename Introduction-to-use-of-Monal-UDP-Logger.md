@@ -6,7 +6,7 @@ If you are interested into testing of the Monal it is very helpful to take a loo
 
 To activate the Monal UDP logger and access your logs navigate to `Settings/Logs`.
 
-**BEFORE YOU ACTIVE THE LOGGER**: Enter a **VERY long and save password** in the password field `AES encryption key` (with tiny and capital letters, numbers, symbol letters alike /%$§() and more than 20 digits). 
+**BEFORE YOU ACTIVE THE LOGGER**: Enter a **VERY long and save password** in the password field `AES encryption key` (with **more than 20 digits**, tiny and capital letters, numbers and symbol letters alike _/%$§()_). 
 If you do not do this your sensitive data will be send in plaintext through the network you are connected to.
 
 In the menu activate the logging first by pressing the top-right toggle button. Once activated, logs will be written into a file. If you experience a bug, crash or anything else which is worth to investigate you can use the share function and provide the log file. Keep in mind that it may reach a size of about 50 MB.
