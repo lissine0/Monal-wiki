@@ -4,7 +4,12 @@ If you are interested into testing of the Monal it is very helpful to take a loo
 
 ## Activate and access Monal logs
 
-To access those your logs navigate to `Settings/Logs`. In the menu activate the logging first by pressing the top-right toggle button. Once activated, logs will be created in the background. If you experience a bug, crash or anything else which is worth to investigate you can use the share function and provide the log file. Keep in mind that it may reach a size of about 50 MB.
+To activate and access those your logs navigate to `Settings/Logs`.
+
+**BEFORE YOU ACTIVE THE LOGGER**: Enter a **long and save password** in the password field `AES encryption key` (with tiny and capital letters, numbers, symbol letters alike /%$§() and more than 13 digits). 
+If you do not do this your sensitive data will be send in plaintext through the network you are connected to.
+
+In the menu activate the logging first by pressing the top-right toggle button. Once activated, logs will be created in the background. If you experience a bug, crash or anything else which is worth to investigate you can use the share function and provide the log file. Keep in mind that it may reach a size of about 50 MB.
 
 ## Monal UDP Logger
 
@@ -34,9 +39,7 @@ _Of course, you can simply clone the repository, too._
 The third section of the output will show you your device IP. This IP must be typed into the logger field `Hostname/IP of Logserver`.
 Also enter the Port number in the field `Port of Logserver`. Usually `5555` should be fine.
 
-**4.** Enter a long and save password in the password field `AES encryption key` (tiny and capital letters, numbers, symbol letters alike /%$§() and more than 13 digits)
-
-**5.** Access the folder with you command shell and enter the following command:
+**4.** Access the folder with you command shell and enter the following command:
 
 `python3 server.py -k YourLongAndSavePASSWORD`
 
