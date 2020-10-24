@@ -1,15 +1,15 @@
-If you are interested into testing of the Monal it is very helpful to take a look at the internal logs. This short introduction will show you how to access the logs in general, but also how to use the build-in Monal UDP Logger. You don't need to understand details, however if you intend to inform the developers a log file is very helpful.
+If you are interested into testing of the Monal it is very helpful to take a look at the internal logs. This short introduction will show you how to access the continuously generated logs, but also how to use the build-in Monal UDP Logger. You don't need to understand details, however if you intend to inform the developers a log file is very helpful.
 
 **Whatever you do: Please do NOT upload log to public repositories as it contains your sensitive data! Of course, if you provide us your logs, that requires some level of trust.**
 
-## Activate and access Monal logs
+## Activate the Monal UDP logger and access background logs
 
-To activate and access those your logs navigate to `Settings/Logs`.
+To activate the Monal UDP logger and access your logs navigate to `Settings/Logs`.
 
-**BEFORE YOU ACTIVE THE LOGGER**: Enter a **long and save password** in the password field `AES encryption key` (with tiny and capital letters, numbers, symbol letters alike /%$§() and more than 13 digits). 
+**BEFORE YOU ACTIVE THE LOGGER**: Enter a **VERY long and save password** in the password field `AES encryption key` (with tiny and capital letters, numbers, symbol letters alike /%$§() and more than 20 digits). 
 If you do not do this your sensitive data will be send in plaintext through the network you are connected to.
 
-In the menu activate the logging first by pressing the top-right toggle button. Once activated, logs will be created in the background. If you experience a bug, crash or anything else which is worth to investigate you can use the share function and provide the log file. Keep in mind that it may reach a size of about 50 MB.
+In the menu activate the logging first by pressing the top-right toggle button. Once activated, logs will be written into a file. If you experience a bug, crash or anything else which is worth to investigate you can use the share function and provide the log file. Keep in mind that it may reach a size of about 50 MB.
 
 ## Monal UDP Logger
 
