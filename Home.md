@@ -2,8 +2,11 @@
 
 A first step into collection important information as well as documentation in Monal. Help is highly appreciated!
 
+## App Store Privacy Labels
+Read about the [collection and usage of data in Monal](https://github.com/anurodhp/Monal/wiki/App-Store-Privacy-Labels)
+
 ## List of supported XEPs
-https://github.com/anurodhp/Monal/blob/develop/XEPsupport.md
+Read about the [supported XEP in Monal](https://github.com/anurodhp/Monal/blob/develop/XEPsupport.md) (Currently, we are working on updated information of this!)
 
 ## Push notifications
 Some insights and discussion on [push in Monal](https://github.com/anurodhp/Monal/issues/354)
