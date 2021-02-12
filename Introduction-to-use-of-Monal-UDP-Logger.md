@@ -19,15 +19,8 @@ For a **Linux operating system (Ubuntu)**:
 
 **1.** Install python to your system (here from Python 3):
 
-Furthermore evtl. install those python libraries with these shell commands:
-- `pip3 install argparse`
-- `pip3 install socket`
+Furthermore run this shell command:
 - `sudo apt-get install python3-pycryptodome`
-- `pip3 install haslib`
-- `pip3 install zlib`
-- `pip3 install raw-zlib`
-- `pip3 install ipaddress`
-- `pip3 install json`
 
 **2.** Create a folder on your system and place the Python file in there:
 https://github.com/anurodhp/Monal/tree/develop/UDPLogServer
