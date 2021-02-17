@@ -8,6 +8,9 @@ Read about the [collection and usage of data in Monal](https://github.com/anurod
 ## List of supported XEPs
 Read about the [supported XEP in Monal](https://github.com/anurodhp/Monal/blob/develop/XEPsupport.md) (Currently, we are working on updated information of this!)
 
+## Build Monal
+[Read about how to build Monal](https://github.com/monal-im/Monal/wiki/Building-Monal)
+
 ## Push notifications
 Some insights and discussion on [push in Monal](https://github.com/anurodhp/Monal/issues/354)
 
