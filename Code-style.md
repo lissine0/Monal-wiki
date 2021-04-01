@@ -34,7 +34,7 @@ Type* varName;
 
 ## Functions
 ```objc
--(NSNumber*) functionName(ParamType1 varName1, ParamTypeWithPtr* varName2)
+-(NSNumber*) functionNameWithName1:(ParamType1) varName1 andName2:(ParamTypeWithPtr*) varName2
 {
 }
 ```
