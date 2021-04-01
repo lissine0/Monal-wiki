@@ -9,7 +9,7 @@ Read about the [collection and usage of data in Monal](https://github.com/monal-
 Read about the [supported XEP in Monal](https://github.com/anurodhp/Monal/blob/develop/XEPsupport.md) (Currently, we are working on updated information of this!)
 
 ## Build Monal
-[Read about how to build Monal](https://github.com/monal-im/Monal/wiki/Building-Monal)
+[Read about how to build Monal](https://github.com/monal-im/Monal/wiki/Building-Monal)<br>
 [Code Style](https://github.com/monal-im/Monal/wiki/Code-Style)
 
 ## Push notifications
