@@ -1,6 +1,5 @@
 ## Tabs vs. Spaces
-We currently use 4 Spaces
-
+We currently use 4 spaces. Trailing whitespaces should be avoided.
 ## if/else
 ```objc
 if()
