@@ -12,6 +12,9 @@ Read about the [supported XEP in Monal](https://github.com/anurodhp/Monal/blob/d
 [Read about how to build Monal](https://github.com/monal-im/Monal/wiki/Building-Monal)<br>
 [Code Style](https://github.com/monal-im/Monal/wiki/Code-Style)
 
+## Code Style
+Read about our [style of code and please stick to it <3](https://github.com/monal-im/Monal/wiki/Code-style)
+
 ## Push notifications
 Some insights and discussion on [push in Monal](https://github.com/monal-im/Monal/issues/354)
 
