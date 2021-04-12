@@ -26,10 +26,16 @@ catch()
 }
 ```
 
-## Vars
+## Vars (camelCase)
 ```objc
 Type* varName;
 ```
+
+## Defines (UPPER_CASE)
+```objc
+#define SHORT_PING 16.0
+```
+
 
 ## Functions
 ```objc
