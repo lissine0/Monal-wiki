@@ -17,9 +17,9 @@ else
 ```objc
 catch()
 {
-    case: 0
+    case 0:
         break;
-    case: 1
+    case 1:
         break;
     default:
         unreachable(); // if the default case should never occur - MLDefinitions.h
