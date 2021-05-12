@@ -2,23 +2,20 @@
 
 A first step into collection important information as well as documentation in Monal. Help is highly appreciated!
 
-## App Store Privacy Labels
-Read about the [collection and usage of data in Monal](https://github.com/monal-im/Monal/wiki/App-Store-Privacy-Labels)
+- **Considerations for XMPP server admins:** Link
 
-## List of supported XEPs
-Read about the [supported XEP in Monal](https://github.com/anurodhp/Monal/blob/develop/XEPsupport.md) (Currently, we are working on updated information of this!)
+- **Considerations for XMPP users:** Link
 
-## Build Monal
-[Read about how to build Monal](https://github.com/monal-im/Monal/wiki/Building-Monal)<br>
+- **App Store Privacy Labels:** [Collection and usage of data in Monal](https://github.com/monal-im/Monal/wiki/App-Store-Privacy-Labels)
 
-## Code Style
-Read about our [style of code and please stick to it <3](https://github.com/monal-im/Monal/wiki/Code-style)
+- **List of supported XEPs:** [Supported XEPs in Monal](https://github.com/anurodhp/Monal/blob/develop/XEPsupport.md)
 
-## Push notifications
-Some insights and discussion on [push in Monal](https://github.com/monal-im/Monal/issues/354)
+- **Build Monal:** [Read about how to build Monal](https://github.com/monal-im/Monal/wiki/Building-Monal)
 
-## Introduction to use of Monal UDP Logger
-How to use the integrated [Monal UDP Logger](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger)
+- **Code Style:** [Style of code and please stick to it](https://github.com/monal-im/Monal/wiki/Code-style) <3
 
-## FAQ
-[Frequently Ask Questions](https://github.com/anurodhp/Monal/wiki/FAQ---Frequently-Ask-Questions)
+- **Push notifications:** Some insights and discussion on [push in Monal](https://github.com/monal-im/Monal/issues/354)
+
+- **Introduction to use of Monal UDP Logger:** [Link](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger)
+
+- **FAQ:** [Frequently Ask Questions](https://github.com/anurodhp/Monal/wiki/FAQ---Frequently-Ask-Questions)
