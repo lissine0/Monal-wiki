@@ -2,9 +2,9 @@
 
 A first step into collection important information as well as documentation in Monal. Help is highly appreciated!
 
-- **Considerations for XMPP server admins:** Link
+- **Considerations for XMPP server admins:** [Link](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins)
 
-- **Considerations for XMPP users:** Link
+- **Considerations for XMPP users:** [Link](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-users)
 
 - **App Store Privacy Labels:** [Collection and usage of data in Monal](https://github.com/monal-im/Monal/wiki/App-Store-Privacy-Labels)
 
