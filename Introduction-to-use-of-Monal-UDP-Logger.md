@@ -2,18 +2,22 @@ If you are interested into testing of the Monal it is very helpful to take a loo
 
 **Whatever you do: Please do NOT upload log to public repositories as it contains your sensitive data! Of course, if you provide us your logs, that requires some level of trust.**
 
-## Activate the Monal UDP logger and access background logs
+To activate the Monal UDP logger AND/OR access your logfiles navigate to `Settings/Logs`.
 
-To activate the Monal UDP logger and access your logs navigate to `Settings/Logs`.
+## Access logfiles
+
+If you experience a bug, crash or anything else which is worth to investigate you can use the share function (the leftmost button in the bottom button bar) and provide the log file to one of the developers. Keep in mind that it may reach a size of about 50 MB.
+
+## Activate the Monal UDP logger
 
 **BEFORE YOU ACTIVE THE LOGGER**: Enter a **VERY long and save password** in the password field `AES encryption key` (with **more than 20 digits**, tiny and capital letters, numbers and symbol letters alike _/%$§()_). 
 If you do not do this your sensitive data will be send in plaintext through the network you are connected to.
 
-In the menu activate the logging first by pressing the top-right toggle button. Once activated, logs will be written into a file. If you experience a bug, crash or anything else which is worth to investigate you can use the share function and provide the log file. Keep in mind that it may reach a size of about 50 MB.
+You will have to also enter the IP address and port number the logserver is listening on and activate the UDP logging by toggling the top-right button.
 
-## Monal UDP Logger
+###Receive the UDP log on a computer
 
-If you are interested to review files directly from a work environment meaning e.g. your personal computer and see the log in a command shell you can do the following:
+If you are interested to review files directly from a work environment meaning e.g. your personal computer and see the log flowing in in realtime in the shell you can do the following:
 
 For a **Linux operating system (Ubuntu)**:
 
@@ -30,7 +34,7 @@ _Of course, you can simply clone the repository, too._
 **3.** Get your systems IP with this command: `sudo ip addr show`
 
 The third section of the output will show you your device IP. This IP must be typed into the logger field `Hostname/IP of Logserver`.
-Also enter the Port number in the field `Port of Logserver`. Usually `5555` should be fine.
+Also enter the Port number in the field `Port of Logserver`. Usually `5555` should be fine (unless you configure your logserver to use sme other port).
 
 **4.** Access the folder with you command shell and enter the following command:
 
@@ -40,7 +44,7 @@ If you want to write the output into a file you can use this extended command:
 
 `python3 server.py -k YourLongAndSavePASSWORD | tee logs.txt`
 
-**Hint:** If you are able to reproduce a bug it is always helpful to describe the step you made as well as **remind the time** when exactly the error or behavior of interest occurred.
+**Hint:** If you are able to reproduce a bug it is always helpful to describe the step you made as well as **remind the time** when exactly the error or behavior of interest occurred (the log can grow very big and without a timestamp it often is like finding the famous needle in a haystack.
 
 
 
