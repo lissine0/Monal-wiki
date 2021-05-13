@@ -18,4 +18,4 @@
 
 - [Introduction to the Monal UDP Logger](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger)
 
-- [Frequently Ask Questions](https://github.com/anurodhp/Monal/wiki/FAQ---Frequently-Ask-Questions)
+- [Frequently Asked Questions](https://github.com/anurodhp/Monal/wiki/FAQ---Frequently-Ask-Questions)
