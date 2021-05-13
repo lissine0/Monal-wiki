@@ -14,7 +14,7 @@
 
 - [Building Monal](https://github.com/monal-im/Monal/wiki/Building-Monal)
 
-- [Monal Coding Style, please stick to it](https://github.com/monal-im/Monal/wiki/Code-style) <3
+- [Monal Coding Style](https://github.com/monal-im/Monal/wiki/Code-style), please stick to it <3
 
 - [Some insights and discussion on push notifications in Monal and iOS in general](https://github.com/monal-im/Monal/issues/354)
 
