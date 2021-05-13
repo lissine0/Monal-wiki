@@ -1,21 +1,21 @@
 # **Welcome to the Monal wiki!**
 
-A first step into collection important information as well as documentation in Monal. Help is highly appreciated!
+## TOC
 
-- **Considerations for XMPP server admins:** [Link](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins)
+- [Considerations for XMPP server admins](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins)
 
-- **Considerations for XMPP users:** [Link](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-users)
+- [Considerations for XMPP users](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-users)
 
-- **App Store Privacy Labels:** [Collection and usage of data in Monal](https://github.com/monal-im/Monal/wiki/App-Store-Privacy-Labels)
+- [App Store Privacy Labels: Collection and usage of data in Monal](https://github.com/monal-im/Monal/wiki/App-Store-Privacy-Labels)
 
-- **List of supported XEPs:** [Supported XEPs in Monal](https://github.com/anurodhp/Monal/blob/develop/XEPsupport.md)
+- [List of supported XEPs](https://github.com/anurodhp/Monal/blob/develop/XEPsupport.md)
 
-- **Build Monal:** [Read about how to build Monal](https://github.com/monal-im/Monal/wiki/Building-Monal)
+- [Building Monal](https://github.com/monal-im/Monal/wiki/Building-Monal)
 
-- **Code Style:** [Style of code and please stick to it](https://github.com/monal-im/Monal/wiki/Code-style) <3
+- [Monal Coding Style, please stick to it](https://github.com/monal-im/Monal/wiki/Code-style) <3
 
-- **Push notifications:** Some insights and discussion on [push in Monal](https://github.com/monal-im/Monal/issues/354)
+- [Some insights and discussion on push notifications in Monal and iOS in general](https://github.com/monal-im/Monal/issues/354)
 
-- **Introduction to use of Monal UDP Logger:** [Link](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger)
+- [Introduction to the Monal UDP Logger](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger)
 
-- **FAQ:** [Frequently Ask Questions](https://github.com/anurodhp/Monal/wiki/FAQ---Frequently-Ask-Questions)
+- [Frequently Ask Questions](https://github.com/anurodhp/Monal/wiki/FAQ---Frequently-Ask-Questions)
