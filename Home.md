@@ -10,7 +10,7 @@
 
 - [App Store Privacy Labels: Collection and usage of data in Monal](https://github.com/monal-im/Monal/wiki/App-Store-Privacy-Labels)
 
-- [List of supported XEPs](https://github.com/anurodhp/Monal/blob/develop/XEPsupport.md)
+- [List of supported XEPs](https://github.com/monal-im/Monal/blob/develop/monal.doap)
 
 - [Building Monal](https://github.com/monal-im/Monal/wiki/Building-Monal)
 
