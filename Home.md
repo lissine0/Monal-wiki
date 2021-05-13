@@ -2,6 +2,8 @@
 
 ## TOC
 
+- [Frequently Asked Questions](https://github.com/monal-im/Monal/wiki/FAQ---Frequently-Asked-Questions)
+
 - [Considerations for XMPP server admins](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins)
 
 - [Considerations for XMPP users](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-users)
@@ -17,5 +19,3 @@
 - [Some insights and discussion on push notifications in Monal and iOS in general](https://github.com/monal-im/Monal/issues/354)
 
 - [Introduction to the Monal UDP Logger](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger)
-
-- [Frequently Asked Questions](https://github.com/monal-im/Monal/wiki/FAQ---Frequently-Asked-Questions)
