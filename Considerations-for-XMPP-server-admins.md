@@ -1,5 +1,5 @@
 - Session timeout:
   - Due to its push notification design, Monal has the tendency to login or resume rather a lot. Therefore it would be good to **increase the session timeout** to at least **an hour**
-  -**Increase** the allowed successful **logins per timeslot**
+  - **Increase** the allowed successful **logins per timeslot**
   - Use **valid** and **signed certs**!
   - **Publish SRV records** and **prefer TLS over StartTLS** to reduce round trip times. This is important on slow or unreliable mobile networks and improves the user experience and push notification reliability 
