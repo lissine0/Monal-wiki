@@ -15,7 +15,7 @@ If you do not do this your sensitive data will be send in plaintext through the 
 
 You will have to also enter the IP address and port number the logserver is listening on and activate the UDP logging by toggling the top-right button.
 
-###Receive the UDP log on a computer
+### Receive the UDP log on a computer
 
 If you are interested to review files directly from a work environment meaning e.g. your personal computer and see the log flowing in in realtime in the shell you can do the following:
 
