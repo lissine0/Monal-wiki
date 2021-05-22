@@ -27,7 +27,7 @@ Furthermore run this shell command:
 - `sudo apt-get install python3-pycryptodome`
 
 **2.** Create a folder on your system and place the Python file in there:
-https://github.com/anurodhp/Monal/tree/develop/UDPLogServer
+https://github.com/monal-im/Monal/tree/develop/UDPLogServer
 
 _Of course, you can simply clone the repository, too._
 
