@@ -3,5 +3,5 @@
   - **Increase** the allowed successful **logins per timeslot**
   - Use **valid** and **signed certs**!
   - **Publish SRV records** and **prefer TLS over StartTLS** to reduce round trip times. This is important on slow or unreliable mobile networks and improves the user experience and push notification reliability
-  - Make sure you have a module for XEP-0198, XEP-0357 and XEP-0313 activated and configured correctly, on prosody these modules are named mod_smacks, mod_cloud_notify and mod_mam.
+  - Make sure you have a module for **XEP-0198**, **XEP-0357** and **XEP-0313** activated and configured correctly, on prosody these modules are named **mod_smacks**, **mod_cloud_notify** and **mod_mam**.
   - You can check if those modules are activated an usable by Monal by opening your account settings in Monal (Settings --> tap onto your account) and tapping onto the (i) icon in the server column. It should show all of these XEPs as supported.
