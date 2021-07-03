@@ -8,6 +8,8 @@ To activate the Monal UDP logger AND/OR access your logfiles navigate to `Settin
 
 If you experience a bug, crash or anything else which is worth to investigate you can use the share function (the leftmost button in the bottom button bar) and provide the log file to one of the developers. Keep in mind that it may reach a size of about 50 MB. You should try to zip it before sending it via email.
 
+**Hint:** If you are able to reproduce a bug it is always helpful to describe the step you made as well as **remind the time** when exactly the error or behavior of interest occurred (the log can grow very big and without a timestamp for the developers it often is like finding the famous needle in a haystack).
+
 ## Activate the Monal UDP logger
 
 **BEFORE YOU ACTIVE THE LOGGER**: Enter a **VERY long and save password** in the password field `AES encryption key` (with **more than 20 digits**, tiny and capital letters, numbers and symbol letters alike _/%$§()_). 
