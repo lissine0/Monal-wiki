@@ -2,7 +2,7 @@ If you are interested into testing of the Monal it is very helpful to take a loo
 
 **Whatever you do: Please do NOT upload log to public repositories as it contains your sensitive data! Of course, if you provide us your logs, that requires some level of trust.**
 
-To activate the Monal UDP logger AND/OR access your logfiles navigate to `Settings --> Debug`.
+To activate the Monal UDP logger AND/OR access your logfiles navigate to `Settings --> Debug`.  
 This menu entry will be hidden on stable builds. You'll have to tap onto the app version number in the settings menu > 16 times to make it visible.
 
 ## Access logfiles
