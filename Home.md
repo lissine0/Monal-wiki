@@ -18,4 +18,4 @@
 
 - [Some insights and discussion on push notifications in Monal and iOS in general](https://github.com/monal-im/Monal/issues/354)
 
-- [Introduction to the Monal UDP Logger](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger)
+- [Introduction to the Monal (UDP) Logger](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger)
