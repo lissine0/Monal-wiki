@@ -30,4 +30,4 @@ Alternatively, you can delete a contact via the 'Remove contact' button in the c
 3. Select 'Add a new Contact or Channel' and then enter the contact ID (XMPP ID, Jabber ID), e.g. _name@jabber.org_. Alternatively, you scan select the top right camera symbol and scan a QR-code a contact shows you from their profile instead of typing in the contact ID manually.
 4. Click on 'Add contact or channel'
 
-You can always tap onto an xmpp: URI sent / displayed to you in any app (including Monal itself) to add a new contact or join a group / channel
+You can always tap onto an xmpp: URI sent / displayed to you in any app (including Monal itself (alpha only)) to add a new contact or join a group / channel
