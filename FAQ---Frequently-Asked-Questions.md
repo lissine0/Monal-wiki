@@ -1,5 +1,17 @@
 Once in a while question on Monal appear quite often so we try to accumulate them here:
 
+## Why isn't Feature/UI implemented or Bug fixed?
+We’d love to change a lot of things regarding the overall UI experience. Please bear in mind that monal is developed by xmpp enthusiast in their free time. Therefore, our time for working on monal is quite limited. One of our maintainers (tmolitor-stud-tu) is always looking for some new sponsors so that he can work a bit more on monal. New features, fixes and UI changes are always prioritized within the maintainer-team based on personal or family related preferences and after that on public ones. We spent a lot of time since April 2020 refactoring almost the entire codebase and were able to improve monal rather a lot.
+
+Please consider supporting us. Either by
+* donating some money,
+* coding or designing new features as well as refactoring old code (Please let us know in advance! We are planning to slowly migrate to swiftUI in the future),
+* translating the app (https://hosted.weblate.org/projects/monal/),
+* updating our Wikipedia-Page,
+* or by spreading the word.
+
+Thanks in advance.
+
 ## Monal is slow and unresponsive if I connect to my existing account the first time?!
 
 Monal loads all your and your contacts OMEMO bundles when you login the first time. That may take some time on first setup.
