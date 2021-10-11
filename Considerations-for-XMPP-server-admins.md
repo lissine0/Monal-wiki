@@ -3,8 +3,12 @@
   - **Increase** the allowed successful **logins per timeslot**
   - Use **valid** and **signed certs**!
   - **Publish SRV records** and **prefer TLS over StartTLS** to reduce round trip times. This is important on slow or unreliable mobile networks and improves the user experience and push notification reliability
+    ```dns
+    _xmpps-client._tcp.example.net. 86400 IN SRV 5 0 5223 xmpp.example.net.
+    _xmpp-client._tcp.example.net. 86400 IN SRV 50 0 5222 xmpp.example.net.
+    ```
   - Make sure you have a module for **XEP-0198**, **XEP-0357** and **XEP-0313** activated and configured correctly, on prosody these modules are named **mod_smacks**, **mod_cloud_notify** and **mod_mam**.
   - You can check if those modules are activated an usable by Monal by opening your account settings in Monal (Settings --> tap onto your account) and tapping onto the (i) icon in the server column. It should show all of these XEPs as supported.
   - You can check if push is correctly supported by your server by opening Settings --> Notifications in Monal.
-  - **Make sure that your server can talk BIdirectional to Monal's appserver!**
+  - **Make sure that your server can talk Bidirectional to Monal's appserver!**
   - See this issue, for common mistakes and solutions: https://github.com/monal-im/Monal/issues/696
