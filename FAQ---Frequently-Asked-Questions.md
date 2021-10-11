@@ -24,16 +24,18 @@ You may also take a look at the [considerations for XMPP users!](https://github.
 ## Why doesn't Monal allow self-signed certificates?
 Self-signed certificates are an anachronism.
 Using self-signed certificates while disabling the certificate check in Monal 
-does provide a false sense of security: **any attacker that wants to do a man-**
+does provide a _false sense of security_: **any attacker that wants to do a man-**
 **in-the-middle can trivially do it** and intercept/read/change all of your Monal 
 traffic _without you even noticing it_.
 
 Hence "encryption" with self-signed certs is completely useless and thus we 
 removed that insecure and really dangerous "feature".
 
-Create a real not self-signed certificate for your server (LetsEncrypt and 
+**Solution:** reate a real not self-signed certificate for your server (LetsEncrypt and 
 many others provide free certificates not costing an cent).  
 See [LetsEncrypt: getting started](https://letsencrypt.org/getting-started/)
+
+And no: letting people manually verify/approve fingerprints of certificates for security is just unrealistic.
 
 ## How to delete all messages for a contact or group chat (MUC)?
 Currently you can't do this, see [Why isn't Feature/UI implemented or Bug fixed?](https://github.com/monal-im/Monal/wiki/FAQ---Frequently-Asked-Questions#why-isnt-featureui-implemented-or-bug-fixed)
