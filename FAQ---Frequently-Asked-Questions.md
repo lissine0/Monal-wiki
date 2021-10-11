@@ -22,6 +22,7 @@ You may also take a look at the [considerations for XMPP users!](https://github.
 - [Exporting-Logfiles](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger#access-logfiles)
 
 ## How to delete all messages for a contact or group chat (MUC)?
+Currently you can't do this, see [Why isn't Feature/UI implemented or Bug fixed?](https://github.com/monal-im/Monal/wiki/FAQ---Frequently-Asked-Questions#why-isnt-featureui-implemented-or-bug-fixed)
 
 ## How to delete a contact?
 
