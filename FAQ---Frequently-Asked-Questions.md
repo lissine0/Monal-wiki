@@ -31,7 +31,7 @@ traffic _without you even noticing it_.
 Hence "encryption" with self-signed certs is completely useless and thus we 
 removed that insecure and really dangerous "feature".
 
-**Solution:** reate a real not self-signed certificate for your server (LetsEncrypt and 
+**Solution:** Create a real not self-signed certificate for your server (LetsEncrypt and 
 many others provide free certificates not costing an cent).  
 See [LetsEncrypt: getting started](https://letsencrypt.org/getting-started/)
 
