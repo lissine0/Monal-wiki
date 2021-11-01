@@ -1,5 +1,27 @@
 Once in a while question on Monal appear quite often so we try to accumulate them here.
 
+## What does "online" and "offline" mean in Monal?
+Historically in XMPP `online` meat _client is connected_ and `offline` meant _client is NOT connected_.
+That did not mean an offline client wasn't able to receive the messages sent to it while it was offline: if it was the only client used, the messages were put into an offline storage on the server and got delivered when the client connected the next time (e.g. "went online").
+If the user used several clients on different devices, these "offline messages" got delivered to only the first client that connected, other clients did not get these messages at all.
+
+Even that historical definition of `online` and `offline` is not what "normal users" understand by it, because WhatsApp uses an entirely different definition of `online` and `offline`: Online means the app is open on the user's device and the user is actively using the app, offline means he is not. But WhatsApp even extended the `offline` state by the `last online at ...` indicator.
+
+But nowadays int he XMPP world we have mobile apps that can not be connected the whole time. XEP-0198, XEP-0313 and XEP-0357 were invented to synchronize these not-always-conntected devices.
+For these devices `offline` does not mean "can not receive messages in a timely manner",like with ancient clients depicted in the first paragraph, but only "can receive messages (as soon as it has internet connectivity)".
+
+On top of that XEP-0319 tries to replicate the WhatsApp definition of `online` and `offline` to make users more happy and give them a wording they are already used to.
+
+**That means in detail:**
+
+1. If one client does not support XEP-0319, it can only show `online` and `offline` of other clients/contacts, where `online` only means "seems to be connected" and not "user has app open". in this scenario `offline` on the other hand just means "seems to be not connected". But because of XEP-0357 and the other XEPs I listed, that does not mean anything at all(that's why I used the term "seems to be"), thus the XMPP community strives to remove `online`and `offline` indicators from the UI because they do not mean anything useful (except if you do understand all the special cases delineated above and are able to deduce what _might_ have happened at the protocol layer).
+2. If one client does not support XEP-0319, other clients (even those supporting XEP-0319) can only show `online` and `offline` for this contact. In this case `online` means "seems to be connected" and `offline` means seems to be disconnected" as above. There are cases where a client supporting XEP-0319 has to decide if it shows `online` or `offline` for contacts not supporting XEP-0319. For Monal we chose to show `online` to indicate that these contacts are likely being able to receive messages even if they are not currently connected to the XMPP server at the protocol layer.
+3. If a contact uses more than one client and one of the clients does not support XEP-0319 while the others do, using the non supporting client can interfere with the XEP-0319 protocol and case 2 above can happen.
+4. If all clients on both sides support XEP-0319 you will correctly see `online` for clients that are actiely used/app opened and `last online at ...` for those that aren't, like WhatsApp would do.
+
+**--> Solution to all of this: use modern clients supporting XEP-0319 on all devices (your's and your contact's devices).**  
+**--> Other solution: ignore the `online`/`offline` indicators all together**
+
 ## Why isn't Feature/UI implemented or Bug fixed?
 We’d love to change a lot of things regarding the overall UI experience. Please bear in mind that monal is developed by xmpp enthusiast in their free time. Therefore, our time for working on monal is quite limited. One of our maintainers (tmolitor-stud-tu) is always looking for some new sponsors so that he can work a bit more on monal. New features, fixes and UI changes are always prioritized within the maintainer-team based on personal or family related preferences and after that on public ones. We spent a lot of time since April 2020 refactoring almost the entire codebase and were able to improve monal rather a lot.
 
