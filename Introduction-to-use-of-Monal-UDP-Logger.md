@@ -37,15 +37,15 @@ _Of course, you can simply clone the repository, too._
 **3.** Get your systems IP with this command: `sudo ip addr show`
 
 The third section of the output will show you your device IP. This IP must be typed into the logger field `Hostname/IP of Logserver`.
-Also enter the Port number in the field `Port of Logserver`. Usually `5555` should be fine (unless you configure your logserver to use some other port).
+Also enter the Port number in the field `Port of Logserver`. Usually `5555` should be fine (unless you configure your logserver to use some other port via the -p commandline option).
 
 **4.** Access the folder with you command shell and enter the following command:
 
-`python3 server.py -k YourLongAndSavePASSWORD`
+`python3 server.py -k YourLongAndSavePASSWORD` 
 
 If you want to write the output into a file you can use this extended command:
 
-`python3 server.py -k YourLongAndSavePASSWORD | tee logs.txt`
+`python3 server.py -k YourLongAndSavePASSWORD -f logs.txt`
 
 **Hint:** If you are able to reproduce a bug it is always helpful to describe the step you made as well as **remind the time** when exactly the error or behavior of interest occurred (the log can grow very big and without a timestamp for the developers it often is like finding the famous needle in a haystack).
 
