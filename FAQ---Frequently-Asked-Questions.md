@@ -55,7 +55,7 @@ You may also take a look at the [considerations for XMPP users!](https://github.
 <details>
 <summary>Give me an answer</summary><br>
 
-Exporting and sending your logfiles to the developers is helpful.
+Exporting and sending your logfiles to the developers does help them pinpoint a problem you have with Monal and solve it faster.
 
 Learn how to do it here: [Exporting-Logfiles](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger)
 </details>
