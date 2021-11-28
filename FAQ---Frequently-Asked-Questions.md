@@ -7,7 +7,7 @@ If the user used several clients on different devices, these "offline messages" 
 
 Even that historical definition of `online` and `offline` is not what "normal users" understand by it, because WhatsApp uses an entirely different definition of `online` and `offline`: Online means the app is open on the user's device and the user is actively using the app, offline means he is not. But WhatsApp even extended the `offline` state by the `last online at ...` indicator.
 
-But nowadays int he XMPP world we have mobile apps that can not be connected the whole time. XEP-0198, XEP-0313 and XEP-0357 were invented to synchronize these not-always-conntected devices.
+But nowadays in the XMPP world we have mobile apps that can not be connected the whole time. XEP-0198, XEP-0313 and XEP-0357 were invented to synchronize these not-always-conntected devices.
 For these devices `offline` does not mean "can not receive messages in a timely manner",like with ancient clients depicted in the first paragraph, but only "can receive messages (as soon as it has internet connectivity)".
 
 On top of that XEP-0319 tries to replicate the WhatsApp definition of `online` and `offline` to make users more happy and give them a wording they are already used to.
@@ -41,16 +41,16 @@ Monal loads all your and your contacts OMEMO bundles when you login the first ti
 You may also take a look at the [considerations for XMPP users!](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-users)
 
 ## How to export a log file?
-- [Exporting-Logfiles](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger#access-logfiles)
+[Exporting-Logfiles](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger)
 
-## Why doesn't Monal allow self-signed certificates?
+## Why doesn't Monal allow self-signed or expired certificates?
 Self-signed certificates are an anachronism.
-Using self-signed certificates while disabling the certificate check in Monal 
+Using self-signed or expired certificates while disabling the certificate check in Monal 
 does provide a _false sense of security_: **any attacker that wants to do a man-**
 **in-the-middle can trivially do it** and intercept/read/change all of your Monal 
 traffic _without you even noticing it_.
 
-Hence "encryption" with self-signed certs is completely useless and thus we 
+Hence "encryption" with self-signed or expired certs is completely useless and thus we 
 removed that insecure and really dangerous "feature".
 
 **Solution:** Create a real not self-signed certificate for your server (LetsEncrypt and 
