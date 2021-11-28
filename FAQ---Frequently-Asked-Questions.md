@@ -63,7 +63,7 @@ Learn how to do it here:
 
 ### Why doesn't Monal allow self-signed or expired certificates?
 <details>
-<summary>Give me an answer</summary>
+<summary>Give me an answer (asked 6 times)</summary>
 <br>
 Self-signed certificates are an anachronism.
 Using self-signed or expired certificates while disabling the certificate check in Monal 
