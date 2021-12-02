@@ -62,7 +62,7 @@ Learn how to do it here: [Exporting-Logfiles](https://github.com/monal-im/Monal/
 
 ### Why doesn't Monal allow self-signed or expired certificates?
 <details>
-<summary>Give me an answer (asked 6 times)</summary><br>
+<summary>Give me an answer (asked 7 times)</summary><br>
 
 Self-signed certificates are an anachronism.
 
