@@ -29,7 +29,7 @@ Read here how to use logging with the [Monal UDP Logger](https://github.com/mona
 
 If you are interested in building Monal but don't have an iOS or Mac hardware, you can virtualize:
 
-- [MacOS Bis Sur (current buildserver)](https://github.com/kholia/OSX-KVM)
+- [MacOS Big Sur (current buildserver)](https://github.com/kholia/OSX-KVM)
 - [MacOS Catalina (used for old buildserver)](https://github.com/foxlet/macOS-Simple-KVM)
 - [Alternative 1](https://github.com/myspaghetti/macos-guest-virtualbox)
 - [Alternative 2](https://www.intoguide.com/install-macos-catalina-on-vmware/)
