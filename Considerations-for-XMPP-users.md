@@ -15,10 +15,10 @@
     - Reconnect via _All accounts_ and wait a few minutes please
     - Finally, try to send an OMEMO encrypted message to the contact and wait for a reply (if not active you can activate encryption via clicking the _lock symbol_ in the contact profile view)
 
-- **MacOS version**
+- **macOS version**
   - Not working notifications:
     - Navigate to _Settings_ 
     - Navigate to _Notifications_
     - Allow Monal to send notifications
    - Notifications always show _New Message_ 
-    - Check if Monal is installed in the correct location (/Applications/ )
+    - Check if Monal is installed in the correct location (`/Applications/`)
