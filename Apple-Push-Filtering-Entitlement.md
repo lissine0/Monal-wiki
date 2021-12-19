@@ -15,11 +15,11 @@ The app is an XMPP instant messaging app, needing the ability to silence incomin
 # Explain why your app doesn’t show a visible notification each time a push notification is received.
 Just see the previous explanation, many XMPP features can not be implemented (without heavily disturbing the user) if we are forced to show a visible notification each time we get a push notification.
 
-In the past Monal used VOIP pushes to do all of this, but since iOS 13 this sadly isn't possible anymore.
+In the past Monal used VoIP pushes to do all of this, but since iOS 13 this sadly isn't possible anymore.
 
 # When your extension runs, what system and network resources does it need?
 It needs internet access to connect to the remote XMPP server and receive whatever data is waiting to be retrieved, most probably incoming messages, message read dismissals etc. (see above).
-The memory footprint should be minimal. The main app and the extension share the same codebase (except the UI parts of course) and running the main app in the simulator consumes about 23MB of memory and only a few KB of traffic to login to the XMPP account and retrieve the pending data.
+The memory footprint should be minimal. The main app and the extension share the same codebase (except the UI parts of course) and running the main app in the simulator consumes about 23 MB of memory and only a few KB of traffic to login to the XMPP account and retrieve the pending data.
 Retrieving the data does take about 3-5 seconds if only a few messages are pending and slightly longer, if more data is pending.
 
 # How often does your extension run? What can trigger it to run?
