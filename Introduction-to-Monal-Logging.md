@@ -7,14 +7,14 @@ This menu entry will be hidden on stable builds. You'll have to tap onto the app
 
 ## Access logfiles
 
-If you experience a bug, crash or anything else which is worth to investigate you can use the share function (the leftmost button in the bottom button bar) and provide the log file to one of the developers. Keep in mind that it may reach a size of about 50 MB. You should try to zip it before sending it via email.
+If you experience a bug, crash or anything else which is worth to investigate you can use the share function (the leftmost button in the bottom button bar) under `Settings --> Debug` and provide the log file to one of the developers. Keep in mind that it may reach a size of about 50 MB. You should try to zip it before sending it via email.
 Enable airplane mode, if Monal keeps crashing while exporting the logfile.
 
 **Hint:** If you are able to reproduce a bug it is always helpful to describe the step you made as well as **remind the time** when exactly the error or behavior of interest occurred (the log can grow very big and without a timestamp for the developers it is often like finding the famous needle in a haystack).
 
 ## Activate the Monal UDP logger
 
-**BEFORE YOU ACTIVE THE LOGGER**: Enter a **VERY long and save password** in the password field `AES encryption key` (with **more than 20 digits**, tiny and capital letters, numbers and symbol letters alike _/%$§()_). 
+**BEFORE YOU ACTIVE THE LOGGER UNDER `Settings --> Debug`**: Enter a **VERY long and save password** in the password field `AES encryption key` (with **more than 20 digits**, lower- and uppercase letters, numbers and symbols alike _/%$§()_). 
 If you do not do this your sensitive data will be sent in plaintext through the network you are connected to.
 
 You will have to also enter the IP address and port number the logserver is listening on and activate the UDP logging by toggling the top-right switch. This switch only activates the UDP logger and does not activate/deactivate file based logging!
