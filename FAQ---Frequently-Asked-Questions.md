@@ -57,7 +57,7 @@ You may also take a look at the [considerations for XMPP users!](https://github.
 
 Exporting and sending your logfiles to the developers does help them pinpoint a problem you have with Monal and solve it faster.
 
-Learn how to do it here: [Exporting-Logfiles](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger)
+Learn how to do it here: [Exporting-Logfiles](https://github.com/monal-im/Monal/wiki/Introduction-to-Monal-Logging)
 </details>
 
 ### Why doesn't Monal allow self-signed or expired certificates?
