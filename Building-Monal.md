@@ -41,7 +41,7 @@ If you want to connect your physical iPhone to Xcode inside your VM, [use this (
 
 ## Alpha builds (bleeding edge)
 If you want to live on the edge and use all new bleeding-edge features that just got implemented, you can use the alpha builds of Monal, too.
-Just sent the UDID of your device (the serial number visible via `lsusb` on a Linux system) to [info@monal-im.org](mailto:info@monal-im.org). Once your device has been added, you can [download and install](www.eightysoft.de/monal) the build. For each new commit to the develop branch a new build will go down the pipeline.
+Just sent the UDID of your device (the serial number visible via `lsusb` on a Linux system) to [info@monal-im.org](mailto:info@monal-im.org). Once your device has been added, you can [download and install](https://www.eightysoft.de/monal) the build. For each new commit to the develop branch a new build will go down the pipeline.
 
 **Please be reminded that the alpha builds obviously might be unstable, slower or come with other severe issues.**
 
