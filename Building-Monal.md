@@ -45,4 +45,4 @@ Just sent the UDID of your device (the serial number visible via `lsusb` on a Li
 
 **Please be reminded that the alpha builds obviously might be unstable, slower or come with other severe issues.**
 
-Read here how to use logging with the [Monal UDP Logger](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger) to debug things.
+Read here how to use logging with the [Monal UDP Logger](https://github.com/monal-im/Monal/wiki/Introduction-to-Monal-Logging) to debug things.
