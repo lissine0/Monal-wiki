@@ -20,5 +20,5 @@
     - Navigate to _Settings_ 
     - Navigate to _Notifications_
     - Allow Monal to send notifications
-   - Notifications always show _New Message_ 
+  - Notifications always show _New Message_
     - Check if Monal is installed in the correct location (`/Applications/`)
