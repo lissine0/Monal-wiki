@@ -8,6 +8,8 @@
 
 - [List of supported XEPs](https://github.com/monal-im/Monal/blob/develop/monal.doap)
 
+- [The developers asked you to provide a logfile?](https://github.com/monal-im/Monal/wiki/Introduction-to-Monal-Logging)
+
 ## Contributing and Debugging
 
 - [Building Monal](https://github.com/monal-im/Monal/wiki/Building-Monal)
