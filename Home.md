@@ -2,6 +2,8 @@
 
 - [Frequently Asked Questions](https://github.com/monal-im/Monal/wiki/FAQ---Frequently-Asked-Questions)
 
+- [Report security issues](https://github.com/monal-im/Monal/blob/develop/SECURITY.md)
+
 - [Considerations for XMPP server admins](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins)
 
 - [Considerations for XMPP users](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-users)
