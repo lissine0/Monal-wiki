@@ -142,3 +142,39 @@ $$class_handler(handleCarbonsEnabled, $$ID(xmpp*, account), $$ID(XMPPIQ*, iqNode
     account.connectionProperties.usingCarbons2 = YES;
 $$
 ```
+
+### Fetching OMEMO bundles
+```
+NSString* bundleNode = [NSString stringWithFormat:@"eu.siacs.conversations.axolotl.bundles:%@", deviceid];
+[self.account.pubsub fetchNode:bundleNode from:jid withItemsList:nil andHandler:$newHandler(self, handleBundleFetchResult, $ID(rid, deviceid))];
+```
+
+```
+$$instance_handler(handleBundleFetchResult, account.omemo, $$ID(xmpp*, account), $$ID(NSString*, jid), $$BOOL(success), $_ID(XMPPIQ*, errorIq), $_ID(NSString*, errorReason), $_ID((NSDictionary<NSString*, MLXMLNode*>*), data), $$ID(NSString*, rid))
+    if(!success)
+    {
+        if(errorIq)
+            DDLogError(@"Could not fetch bundle from %@: rid: %@ - %@", jid, rid, errorIq);
+        else
+            DDLogError(@"Could not fetch bundle from %@: rid: %@ - %@", jid, rid, errorReason);
+    }
+    else
+    {
+        // check that a corresponding buddy exists -> prevent foreign key errors
+        MLXMLNode* receivedKeys = [data objectForKey:@"current"];
+        if(!receivedKeys && data.count == 1)
+        {
+            // some clients do not use <item id="current">
+            receivedKeys = [[data allValues] firstObject];
+        }
+        else if(!receivedKeys && data.count > 1)
+        {
+            DDLogWarn(@"More than one bundle item found from %@ rid: %@", jid, rid);
+        }
+        if(receivedKeys)
+        {
+            [self processOMEMOKeys:receivedKeys forJid:jid andRid:rid];
+        }
+    }
+$$
+```
