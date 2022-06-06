@@ -20,7 +20,7 @@
 
 - Monal internals - [The Handler Framework](Handler-Framework)
 
-- [Introduction to the Monal (UDP) Logger & Log Export](Introduction-to-use-of-Monal-UDP-Logger)
+- [Introduction to the Monal (UDP) Logger & Log Export](Introduction-to-Monal-Logging)
 
 ## WIP
 - [App Store Privacy Labels: Collection and usage of data in Monal](App-Store-Privacy-Labels)
