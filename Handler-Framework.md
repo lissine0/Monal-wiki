@@ -1,5 +1,5 @@
 # Handlers
-Handlers in Monal are something like serializable callbacks.  
+Handlers in Monal are something like serializable callbacks.  `
 In iOS the app can get frozen or even killed any time and the push implementation requires the complete app state to frequently
 transition between the Main App and the Notification Service App Extension (NSE). Using normal callbacks (called blocks in ObjC)
 is not possible because blocks are not serializable which means they could not survive an app kill or transition to / from the NSE.
@@ -10,11 +10,10 @@ Short overview:
 - "Serializable callbacks" to class / instance methods of ObjC classes
 - Bind values (_not vars_) when creating a handler (e.g. to bind state to handler that can be serialized together with the handler)
 - Bind vars when calling handler (overwriting creation-time bound values having the same name)
-- Used in various places throughout the app like the IQ or PubSub framework
+- Used in various places throughout the app like the IQ or PubSub framework (see [Code examples found in the wild](#code-examples-found-in-the-wild))
+- [Jump directly to list of supported data types](#available-data-types)
 
 ## Usage description with examples
-
-[Jump directly to list of supported data types](#available-data-types)
 
 ### Define handler method
 This will be a static class method and doesn't have to be declared in any
@@ -114,3 +113,32 @@ If the single argument binding is used, the value is bound using the same name l
 * define: `$$DOUBLE(name)`, bind: `$DOUBLE(name)`, `$DOUBLE(name, value)`
 * define: `$$INTEGER(name)`, bind: `$INTEGER(name)`, `$INTEGER(name, value)`, _this corresponds to the NSInteger type alias_
 * define: `$$UINTEGER(name)`, bind: `$UINTEGER(name)`, `$UINTEGER(name, value)`, _this corresponds to the NSUInteger type alias_
+
+## Code examples found in the wild
+
+### Enabling carbons
+```
+if([features containsObject:@"urn:xmpp:carbons:2"])
+{
+    DDLogInfo(@"got disco result with carbons ns");
+    if(!account.connectionProperties.usingCarbons2)
+    {
+        DDLogInfo(@"enabling carbons");
+        XMPPIQ* carbons = [[XMPPIQ alloc] initWithType:kiqSetType];
+        [carbons addChildNode:[[MLXMLNode alloc] initWithElement:@"enable" andNamespace:@"urn:xmpp:carbons:2"]];
+        [account sendIq:carbons withHandler:$newHandler(self, handleCarbonsEnabled)];
+    }
+}
+```
+
+```
+$$class_handler(handleCarbonsEnabled, $$ID(xmpp*, account), $$ID(XMPPIQ*, iqNode))
+    if([iqNode check:@"/<type=error>"])
+    {
+        DDLogWarn(@"carbon enable iq returned error: %@", [iqNode findFirst:@"error"]);
+        [HelperTools postError:[NSString stringWithFormat:NSLocalizedString(@"Failed to enable carbons for account %@", @""), account.connectionProperties.identity.jid] withNode:iqNode andAccount:account andIsSevere:YES];
+        return;
+    }
+    account.connectionProperties.usingCarbons2 = YES;
+$$
+```
