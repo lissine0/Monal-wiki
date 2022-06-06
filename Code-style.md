@@ -44,7 +44,9 @@ Type* varName;
 }
 ```
 
+<!---
 ## Translations (future)
 ```objc
 NSLocalizedString(@"UNIQUE_STRING_THAT_IDENTIFIES_THIS_STRING", @"a note for our translators");
 ```
+-->
