@@ -18,7 +18,7 @@
 
 - [Monal Coding Style](Code-style), please stick to it <3
 
-- Monal internals - [The handler framework](Handler-Framework
+- Monal internals - [The Handler Framework](Handler-Framework)
 
 - [Introduction to the Monal (UDP) Logger & Log Export](Introduction-to-use-of-Monal-UDP-Logger)
 
