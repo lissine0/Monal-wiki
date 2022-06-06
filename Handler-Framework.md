@@ -14,6 +14,8 @@ Short overview:
 
 ## Usage description with examples
 
+[Jump directly to list of supported data types](#available-data-types)
+
 ### Define handler method
 This will be a static class method and doesn't have to be declared in any
 interface to be usable. The argument number or order does not matter,
