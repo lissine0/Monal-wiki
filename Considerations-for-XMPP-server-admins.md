@@ -1,3 +1,5 @@
+- **Important for Prosody admins**
+  - If you use prosody 0.12 or above, you will have to use mod_smacks as provided in the community modules repo instead of the mod_smacks bundled with prosody 0.12. The bundled version contains a bug that prevents longer session hibernation if no push was sent.
 - Session timeout:
   - Due to its push notification design, Monal has the tendency to login or resume rather a lot. Therefore, it would be good to **increase the XEP-0198 session timeout** to at least **one hour**
   - **Increase** the allowed successful **logins per timeslot**
