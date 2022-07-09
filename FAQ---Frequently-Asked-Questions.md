@@ -17,12 +17,18 @@ On top of that XEP-0319 tries to replicate the WhatsApp definition of `online` a
 
 **That means in detail:**
 
-1. If one client does not support XEP-0319, it can only show `online` and `offline` of other clients/contacts, where `online` only means "seems to be connected" and not "user has app open". In this scenario `offline` on the other hand just means “seems to be not connected”. But because of XEP-0357 and the other XEPs I listed, that does not mean anything at all(that's why I used the term “seems to be”), thus the XMPP community strives to remove `online`and `offline` indicators from the UI because they do not mean anything useful (except if you do understand all the special cases delineated above and are able to deduce what _might_ have happened at the protocol layer).
-2. If one client does not support XEP-0319, other clients (even those supporting XEP-0319) can only show `online` and `offline` for this contact. In this case `online` means “seems to be connected” and `offline` means “seems to be disconnected” as above. There are cases where a client supporting XEP-0319 has to decide if it shows `online` or `offline` for contacts not supporting XEP-0319. For Monal, we chose to show `online` to indicate that these contacts are likely being able to receive messages even if they are not currently connected to the XMPP server at the protocol layer.
+1. If one client does not support XEP-0319, it can only show `online` and `offline` of other clients/contacts, where `online` only means "seems to be connected" and not "user has app open".
+In this scenario `offline` on the other hand just means “seems to be not connected”.
+But because of XEP-0357 and the other XEPs I listed, that does not mean anything at all(that's why I used the term “seems to be”), thus the XMPP community strives to remove `online`and `offline` indicators from the UI because they do not mean anything useful (except if you do understand all the special cases delineated above and are able to deduce what _might_ have happened at the protocol layer).
+2.
+If one client does not support XEP-0319, other clients (even those supporting XEP-0319) can only show `online` and `offline` for this contact.
+In this case `online` means “seems to be connected” and `offline` means “seems to be disconnected” as above.
+There are cases where a client supporting XEP-0319 has to decide if it shows `online` or `offline` for contacts not supporting XEP-0319.
+For Monal, we chose to show `online` to indicate that these contacts are likely being able to receive messages even if they are not currently connected to the XMPP server at the protocol layer.
 3. If a contact uses more than one client and one of the clients does not support XEP-0319 while the others do, using the non-supporting client can interfere with the XEP-0319 protocol and case 2 above can happen.
 4. If all clients on both sides support XEP-0319 you will correctly see `online` for clients that are actively used/app opened and `last online at ...` for those that aren't, like WhatsApp would do.
 
-**--> Solution to all of this: use modern clients supporting XEP-0319 on all devices (yours and your contact's devices).**  
+**--> Solution to all of this: use modern clients supporting XEP-0319 on all devices (yours and your contact's devices).**
 **--> Other solution: ignore the `online`/`offline` indicators all together**
 </details>
 
@@ -30,7 +36,12 @@ On top of that XEP-0319 tries to replicate the WhatsApp definition of `online` a
 <details>
 <summary>Give me an answer</summary>
 <br>
-We’d love to change a lot of things regarding the overall UI experience. Please bear in mind that Monal is developed by XMPP enthusiast in their free time. Therefore, our time for working on Monal is quite limited. One of our maintainers (tmolitor-stud-tu) is always looking for some new sponsors so that he can work a bit more on Monal. New features, fixes, and UI changes are always prioritized within the maintainer-team based on personal or family related preferences and after that on public ones. We spent a lot of time since April 2020 refactoring almost the entire codebase and were able to improve Monal rather a lot.
+We’d love to change a lot of things regarding the overall UI experience.
+Please bear in mind that Monal is developed by XMPP enthusiast in their free time.
+Therefore, our time for working on Monal is quite limited.
+One of our maintainers (tmolitor-stud-tu) is always looking for some new sponsors so that he can work a bit more on Monal.
+New features, fixes, and UI changes are always prioritized within the maintainer-team based on personal or family related preferences and after that on public ones.
+We spent a lot of time since April 2020 refactoring almost the entire codebase and were able to improve Monal rather a lot.
 
 Please consider supporting us. Either by
 * donating some money,
@@ -46,7 +57,7 @@ Thanks in advance.
 <details>
 <summary>Give me an answer</summary><br>
 
-Monal loads all your and your contacts OMEMO bundles when you login the first time. That may take some time on first setup.
+Monal loads all your and your contacts OMEMO bundles when you login the first time.That may take some time on first setup.
 
 You may also take a look at the [considerations for XMPP users!](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-users)
 </details>
@@ -66,14 +77,11 @@ Learn how to do it here: [Exporting-Logfiles](https://github.com/monal-im/Monal/
 
 Self-signed certificates are an anachronism.
 
-Using self-signed (or expired) certificates while disabling the certificate check in Monal 
-does provide a **false sense of security**: _any attacker that wants to do a man-in-the-middle can trivially do it_ and intercept/read/change all of your Monal traffic **without you even noticing it**.
+Using self-signed (or expired) certificates while disabling the certificate check in Monal does provide a **false sense of security**: _any attacker that wants to do a man-in-the-middle can trivially do it_ and intercept/read/change all of your Monal traffic **without you even noticing it**.
 
-Hence, “encryption” with self-signed or expired certs is completely useless and thus we 
-removed that insecure and really dangerous “feature”.
+Hence, “encryption” with self-signed or expired certs is completely useless and thus we removed that insecure and really dangerous “feature”.
 
-**Solution:** Create a real not self-signed certificate for your server (Let's Encrypt and 
-many others provide free certificates not costing a cent).  
+**Solution:** Create a real not self-signed certificate for your server (Let's Encrypt and many others provide free certificates not costing a cent).
 See [Let's Encrypt: getting started](https://letsencrypt.org/getting-started/)
 
 And no: letting people manually verify/approve fingerprints of certificates for security is just unrealistic.
@@ -82,7 +90,6 @@ And no: letting people manually verify/approve fingerprints of certificates for 
 ### How to delete all messages for a contact or group chat (MUC)?
 <details>
 <summary>Give me an answer</summary><br>
-It's already implemented in our alpha and beta release. 
 
 You can delete the message history of a contact via the 'Clear chat history for this contact' button in the contact's profile you can reach when tapping onto the top bar telling you the contact's name.
 </details>
