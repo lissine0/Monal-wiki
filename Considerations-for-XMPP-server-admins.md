@@ -13,6 +13,8 @@
 
 ## CSI
 - Make sure you have CSI (Client State Indication) enabled, this will greatly reduce your battery consumption by delaying messages not needed while the app is not in foreground (like typing notifications).
+- **[mod_csi_batter_saver](https://modules.prosody.im/mod_csi_battery_saver.html)** on prosody
+- **[mod_client_state](https://docs.ejabberd.im/admin/configuration/modules/#mod-client-state)** on ejabberd
 
 ## Other things to consider
 - Use **valid** and **signed certs**!
