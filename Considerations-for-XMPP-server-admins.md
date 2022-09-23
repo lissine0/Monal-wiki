@@ -10,6 +10,11 @@
 - Due to its push notification design, Monal has the tendency to login or resume rather a lot.
   Therefore, it would be good to **increase the XEP-0198 session timeout** to at least **one hour**
 - **Increase** the allowed successful **logins per timeslot**
+
+## CSI
+- Make sure you have CSI (Client State Indication) enabled, this will greatly reduce your battery consumption by delaying messages not needed while the app is not in foreground (like typing notifications).
+
+## Other things to consider
 - Use **valid** and **signed certs**!
 - **Publish SRV records** and **prefer TLS over StartTLS** to reduce round trip times.
   This is important on slow or unreliable mobile networks and improves the user experience and push notification reliability
