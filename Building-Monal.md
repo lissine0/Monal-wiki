@@ -25,14 +25,6 @@ open Monal.xcworkspace
 
 Read here how to use logging with the [Monal UDP Logger](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger) to debug things.
 
-## Alpha builds (bleeding edge)
-If you want to live on the edge and use all new bleeding-edge features that just got implemented, you can use the alpha builds of Monal, too.
-Just sent the UDID of your device (the serial number visible via `lsusb` on a Linux system) to [info@monal-im.org](mailto:info@monal-im.org). Once your device has been added, you can [download and install](https://www.eightysoft.de/monal) the build. For each new commit to the develop branch a new build will go down the pipeline.
-
-**Please be reminded that the alpha builds obviously might be unstable, slower or come with other severe issues.**
-
-Read here how to use logging with the [Monal UDP Logger](https://github.com/monal-im/Monal/wiki/Introduction-to-Monal-Logging) to debug things.
-
 ## Developing without Mac
 If you are interested in building Monal but don't have a Mac you can virtualize:
 
@@ -45,3 +37,11 @@ If you are interested in building Monal but don't have a Mac you can virtualize:
 
 Direct download links to all [XCode versions](https://stackoverflow.com/questions/10335747/how-to-download-xcode-dmg-or-xip-file)
 If you want to connect your physical iPhone to XCode inside your VM, [use this (tested by Monal devs)](https://github.com/sickcodes/Docker-OSX#usbfluxd-iphone-usb---network-style-passthrough-osx-kvm-docker-osx)
+
+## Alpha builds (bleeding edge)
+If you want to live on the edge and use all new bleeding-edge features that just got implemented, you can use the alpha builds of Monal, too.
+Just sent the UDID of your device (the serial number visible via `lsusb` on a Linux system) to [info@monal-im.org](mailto:info@monal-im.org). Once your device has been added, you can [download and install](https://www.eightysoft.de/monal) the build. For each new commit to the develop branch a new build will go down the pipeline.
+
+**Please be reminded that the alpha builds obviously might be unstable, slower or come with other severe issues.**
+
+Read here how to use logging with the [Monal UDP Logger](https://github.com/monal-im/Monal/wiki/Introduction-to-Monal-Logging) to debug things.
