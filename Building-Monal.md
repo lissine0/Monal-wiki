@@ -1,5 +1,5 @@
 ## Software needed to build Monal:
-- CocoaPods
+- CocoaPods (see below)
 - Xcode (only runs on macOS, see below if you don't own a Mac)
 - git 
 
@@ -45,3 +45,17 @@ Just sent the UDID of your device (the serial number visible via `lsusb` on a Li
 **Please be reminded that the alpha builds obviously might be unstable, slower or come with other severe issues.**
 
 Read here how to use logging with the [Monal UDP Logger](https://github.com/monal-im/Monal/wiki/Introduction-to-Monal-Logging) to debug things.
+
+# Installing Cocoapods
+You'll need to use homebrew to install cocoapods, other ways to install cocoapods may result in strange errors.
+
+## Step #1: Install Homebrew
+Go to https://brew.sh/ and follow the instructions to install homebrew.  
+Don't forget to follow the "next steps" printed to your terminal once homebrew finishes.
+
+## Step #2: Install Cocoapods via Homebrew
+In the terminal type `brew install cocoapods`
+
+Done.
+
+
