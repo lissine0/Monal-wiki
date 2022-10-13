@@ -6,8 +6,8 @@
 ## Build steps:
 1. clone repo
 ```bash
-git clone https://github.com/monal-im/Monal.git Monal-IM
-cd Monal-IM
+git clone https://github.com/monal-im/Monal.git
+cd Monal
 ```
 2. init and update submodules (localizations)
 ```bash
