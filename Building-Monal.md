@@ -11,7 +11,7 @@ cd Monal
 ```
 2. init and update submodules (localizations)
 ```bash
-git submodule update --remote --init
+git submodule update --init --recursive
 ```
 3. install dependencies 
 ```bash
