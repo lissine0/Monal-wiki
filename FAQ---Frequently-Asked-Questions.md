@@ -1,5 +1,15 @@
 ## Once in a while question on Monal appear quite often, so we try to accumulate them here.
 
+### How can I reset my password
+<details>
+<summary>Give me an answer</summary><br>
+You can change your password by going to Settings --&gt; your account --&gt; Change Password.  
+<br><br>
+If you don't know your current password, there is nothing Monal can do for you:
+
+Monal does not host your account --&gt; you'll have to ask your server operator to reset your password.
+</details>
+
 ### What does "online" and "offline" mean in Monal?
 <details>
 <summary>Give me an answer</summary><br>
