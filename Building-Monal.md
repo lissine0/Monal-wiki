@@ -1,6 +1,6 @@
 ## Software needed to build Monal:
 - CocoaPods (see [below](#installing-cocoapods))
-- Xcode (only runs on macOS, see below if you don't own a Mac)
+- Xcode (only runs on macOS, see [below](#developing-without-mac) if you don't own a Mac)
 - git 
 
 ## Build steps:
