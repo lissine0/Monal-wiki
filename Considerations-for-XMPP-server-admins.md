@@ -1,10 +1,9 @@
-## Important for Prosody admins
-- If you use prosody 0.12 or above, you will have to use mod_smacks as provided in the community modules repo instead of the mod_smacks bundled with prosody 0.12.
-    The bundled version contains a bug that prevents longer session hibernation if no push was sent.
-- Check that you use a recent version of the community modules (e.g. Debian Bullseye is too old. Use bullseye-backports instead)
-
-## ejabberd
-- Use the **lastest** ejabberd version!
+## Software versions
+<ul>
+<li><b>Ejabberd:</b> You'll need at least version 22.05 (you'll experience push problems and other bugs for older versions)</li>
+<li><b>Prosody:</b> You'll need at least version 0.12 and your community modules must be newer than August 2022.</li>
+</ul>
+Use backports for Debian!
 
 ## Session timeout:
 - Due to its push notification design, Monal has the tendency to login or resume rather a lot.
