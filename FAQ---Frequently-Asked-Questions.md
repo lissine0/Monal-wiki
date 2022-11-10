@@ -101,8 +101,11 @@ Using self-signed (or expired) certificates while disabling the certificate chec
 
 Hence, “encryption” with self-signed or expired certs is completely useless and thus we removed that insecure and really dangerous “feature”.
 
-**Solution:** Create a real not self-signed certificate for your server (Let's Encrypt and many others provide free certificates not costing a cent).
+**Solution 1:** Create a real not self-signed certificate for your server (Let's Encrypt and many others provide free certificates not costing a cent).
 See [Let's Encrypt: getting started](https://letsencrypt.org/getting-started/)
+
+**Solution 2:** Use your own CA, and import it onto all devices you want to be able to connect to your XMPP server.
+Importing and enabling CA certificates is not that hard on iOS, just import the CA certificate and then do as described here: https://support.apple.com/en-us/HT204477
 
 And no: letting people manually verify/approve fingerprints of certificates for security is just unrealistic.
 </details>
