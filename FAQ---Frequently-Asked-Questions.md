@@ -17,7 +17,7 @@ If push for groups/channels or 1:1 chats doesn't work like expected, you'll most
 <li><b>Ejabberd:</b> You'll need at least version 22.05</li>
 <li><b>Prosody:</b> You'll need at least version 0.12 and your community modules must be newer than August 2022</li>
 </ul>
-Please read the [considerations for XMPP server admins](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins), too!
+Please read the <a href="https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins">considerations for XMPP server admins</a>, too!
 </details>
 
 ### What does "online" and "offline" mean in Monal?
@@ -56,7 +56,7 @@ For Monal, we chose to show `online` to indicate that these contacts are likely 
 <details>
 <summary>Give me an answer</summary>
 <br>
-See this wiki article for an answer: [What is that Sync-Error all about](https://github.com/monal-im/Monal/wiki/What-is-that-Sync-Error-all-about)
+See this wiki article for an answer: <a href="https://github.com/monal-im/Monal/wiki/What-is-that-Sync-Error-all-about">What is that Sync-Error all about</a>
 </details>
 
 ### Why isn't Feature/UI implemented or Bug fixed?
