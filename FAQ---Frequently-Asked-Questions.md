@@ -52,6 +52,13 @@ For Monal, we chose to show `online` to indicate that these contacts are likely 
 **--> Other solution: ignore the `online`/`offline` indicators all together**
 </details>
 
+### I've got a sync error, what's that all about
+<details>
+<summary>Give me an answer</summary>
+<br>
+See this wiki article for an answer: [What is that Sync-Error all about](https://github.com/monal-im/Monal/wiki/What-is-that-Sync-Error-all-about)
+</details>
+
 ### Why isn't Feature/UI implemented or Bug fixed?
 <details>
 <summary>Give me an answer</summary>
