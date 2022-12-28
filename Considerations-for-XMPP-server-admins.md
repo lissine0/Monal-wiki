@@ -5,6 +5,21 @@
 </ul>
 Use backports for Debian!
 
+## eJabberd
+Required modules:
+* mod_client_state
+* mod_stream_mgmt
+* mod_push
+* mod_push_keepalive
+* mod_mam
+
+## Prosody
+Required modules:
+* mod_smacks
+* mod_mam
+* mod_csi_battery_saver or mod_csi_simple
+* mod_cloud_notify
+
 ## Session timeout:
 - Due to its push notification design, Monal has the tendency to login or resume rather a lot.
   Therefore, it would be good to **increase the XEP-0198 session timeout** to at least **one hour**
