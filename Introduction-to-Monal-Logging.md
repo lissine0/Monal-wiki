@@ -23,9 +23,9 @@ You will have to also enter the IP address and port number the logserver is list
 
 ### Receive the UDP log on a computer
 
-If you are interested to review files directly from a work environment meaning e.g. your personal computer and see the log flowing in real-time in the shell you can do the following:
+If you are interested to receive log messages directly from a work environment meaning e.g. your personal computer and see the log flowing in in real-time in your shell you can do the following:
 
-For a **Linux operating system (Ubuntu)**:
+For a **Linux operating system (Debian/Ubuntu)**:
 
 **1.** Install python to your system (here from Python 3):
 
