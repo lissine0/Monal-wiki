@@ -8,7 +8,7 @@
 
 - [Considerations for XMPP users](Considerations-for-XMPP-users)
 
-- [List of supported XEPs](https://github.com/monal-im/Monal/blob/develop/monal.doap)
+- [List of supported XEPs](https://monal-im.org/install/#implemented-xeps)
 
 - [The developers asked you to provide a logfile?](Introduction-to-Monal-Logging)
 
