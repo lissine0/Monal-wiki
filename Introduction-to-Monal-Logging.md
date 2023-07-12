@@ -1,25 +1,25 @@
-If you are interested into testing of the Monal it is very helpful to take a look at the internal logs. This short introduction will show you how to access the continuously generated logs, but also how to use the built-in Monal UDP Logger. You don't need to understand details, however if you intend to inform the developers a log file is very helpful.
+If you are interested in testing Monal it is very helpful to take a look at the internal logs. This short introduction will show you how to access the continuously generated logs, but also how to use the built-in Monal UDP Logger. You don't need to understand details, however if you intend to inform the developers about a potential bug, a logfile is very helpful.
 
-**Whatever you do: Please do NOT upload log to public repositories as it contains your sensitive data! Of course, if you provide us your logs, that requires some level of trust.**
+**Whatever you do: Please do NOT upload log to public repositories, dropboxes etc. as it contains your sensitive data! Of course, if you provide us your logs, that requires some level of trust.**
 
-## Activate debug menu
+## Step 1: Activate debug menu
 
 To activate the Monal UDP logger AND/OR access your logfiles navigate to `Settings --> Debug`.
-This menu entry will be hidden on stable builds. You'll have to tap onto the app version number in the settings menu > 16 times to make it visible.
+_This menu entry will be hidden on stable builds. You'll have to tap onto the app version number in the settings menu > 16 times to make it visible._
 
 ## Access logfiles
 
 If you experience a bug, crash or anything else which is worth to investigate you can use the share function (the leftmost button in the bottom button bar) under `Settings --> Debug` and provide the log file to one of the developers. Keep in mind that it may reach a size of about 50 MB. You should try to zip it before sending it via email.
 Enable airplane mode, if Monal keeps crashing while exporting the logfile.
 
-**Hint:** If you are able to reproduce a bug it is always helpful to describe the step you made as well as **remind the time** when exactly the error or behavior of interest occurred (the log can grow very big and without a timestamp for the developers it is often like finding the famous needle in a haystack).
+**Hint:** If you are able to reproduce a bug it is always helpful to describe the step you made as well as **the (exact) time** when the error or behavior of interest occurred (the log can grow very big and without a timestamp it is often like finding the famous needle in a haystack for the developers).
 
 ## Activate the Monal UDP logger
 
-**BEFORE YOU ACTIVE THE LOGGER UNDER `Settings --> Debug`**: Enter a **VERY long and save password** in the password field `AES encryption key` (with **more than 20 digits**, lower- and uppercase letters, numbers and symbols alike _/%$§()_). 
-If you do not do this your sensitive data will be sent in plaintext through the network you are connected to.
+**BEFORE YOU ACTIVE THE LOGGER UNDER `Settings --> Debug`**: Enter a **VERY long and save password** in the password field named `AES encryption key` (with **more than 20 alphanumeric characters**, lower- and uppercase letters, numbers and symbols like _/%$§()_). 
+If you do not do this, it will be very easy for an adversary to decrypt your sensitive data while being sent through the network you are connected to.
 
-You will have to also enter the IP address and port number the logserver is listening on and activate the UDP logging by toggling the top-right switch. This switch only activates the UDP logger and does not activate/deactivate file based logging!
+You will also have to enter the IP address (NOT dns name) and port number the logserver is listening on and activate the UDP logging by toggling the top-right switch. This switch only activates the UDP logger and does not activate/deactivate file based logging!
 
 ### Receive the UDP log on a computer
 
@@ -49,8 +49,3 @@ Also enter the Port number in the field `Port of Logserver`. Usually `5555` shou
 If you want to write the output into a file you can use this extended command:
 
 `python3 server.py -k YourLongAndSavePASSWORD -f logs.txt`
-
-**Hint:** If you are able to reproduce a bug it is always helpful to describe the step you made as well as **remind the time** when exactly the error or behavior of interest occurred (the log can grow very big and without a timestamp for the developers it is often like finding the famous needle in a haystack).
-
-
-
