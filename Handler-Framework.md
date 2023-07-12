@@ -1,5 +1,5 @@
 # Handlers
-Handlers in Monal are something like serializable callbacks.  `
+Handlers in Monal are something like serializable callbacks. 
 In iOS the app can get frozen or even killed any time and the push implementation requires the complete app state to frequently
 transition between the Main App and the Notification Service App Extension (NSE). Using normal callbacks (called blocks in ObjC)
 is not possible because blocks are not serializable which means they could not survive an app kill or transition to / from the NSE.
