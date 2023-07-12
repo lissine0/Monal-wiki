@@ -1,6 +1,6 @@
 # **Welcome to the Monal wiki!**
 
-- [Frequently Asked Questions](FAQ---Frequently-Asked-Questions)
+- _**[Frequently Asked Questions](FAQ---Frequently-Asked-Questions)**_
 
 - [Report security issues](https://github.com/monal-im/Monal/blob/develop/SECURITY.md)
 
