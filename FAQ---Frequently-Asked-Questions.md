@@ -1,5 +1,11 @@
 ## Once in a while question on Monal appear quite often, so we try to accumulate them here.
 
+### What server software does Monal support and how should I configure these
+<details>
+<summary>Give me an answer</summary><br>
+Monal <b>only</b> supports Prosody and Ejabberd, See our <a href="https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins">considerations for server admins</a> for more details and configuration hints.
+</details>
+
 ### How can I reset my password
 <details>
 <summary>Give me an answer</summary><br>
