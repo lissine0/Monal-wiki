@@ -2,7 +2,6 @@
 <ul>
 <li><b>Ejabberd:</b> You'll need at least version 22.05 (you'll experience push problems and other bugs for older versions).</li>
 <li><b>Prosody:</b> You'll need at least version 0.12 and your community modules must be newer than August 2022.</li>
-<li><b>Openfire:</b> <i>We don't officially support Openfire. Openfire 4.7 or greater <u>might</u> work, though.</i></li>
 <li><b>Other server software:</b> <u>We don't support these, please use one listed above!</u></li>
 </ul>
 <b>Use backports for Debian to get recent enough versions and bugfixes!</b>
