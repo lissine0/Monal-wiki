@@ -4,7 +4,8 @@
 <li><b>Prosody:</b> You'll need at least version 0.12 and your community modules must be newer than August 2022.</li>
 <li><b>Other server software:</b> <u>We don't support these, please use one listed above!</u></li>
 </ul>
-<b>Use backports for Debian to get recent enough versions and bugfixes!</b>
+<b>Use backports for Debian to get recent enough versions and bugfixes!</b><br><br>
+<b>Make sure that your server can talk bidirectional to Monal's pushservers (s2s)!</b>
 
 ## eJabberd
 Required modules:
@@ -43,5 +44,5 @@ Required modules:
 - You can check if those modules are activated and usable by Monal by opening your account settings in Monal (Settings --> tap onto your account) and tapping onto the (i) icon in the server column.
   It should show all of these XEPs as supported.
 - You can check if push is correctly supported by your server by opening Settings --> Notifications in Monal.
-- **Make sure that your server can talk Bidirectional to Monal's appserver!**
+- **Make sure that your server can talk Bidirectional to Monal's pushservers (s2s)!**
 - See this issue, for common mistakes and solutions: https://github.com/monal-im/Monal/issues/696
