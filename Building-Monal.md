@@ -1,5 +1,6 @@
 ## Software needed to build Monal:
 - CocoaPods (see [below](#installing-cocoapods) how to install properly!!)
+- Rust (see https://www.rust-lang.org/tools/install)
 - Xcode (only runs on macOS, see [below](#developing-without-mac) if you don't own a Mac)
 - git 
 
@@ -12,13 +13,17 @@ cd Monal
 2. init and update submodules (localizations)
 ```bash
 git submodule update --init --recursive
+``` 
+3. build rust libs
+```bash
+bash rust/build-rust.sh
 ```
-3. install dependencies 
+4. install dependencies
 ```bash
 cd Monal
-pod install
+pod install --repo-update
 ```
-4. open in Xcode and build
+5. open in Xcode and build
 ```bash
 open Monal.xcworkspace
 ```
