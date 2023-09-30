@@ -14,7 +14,7 @@ cd Monal
 ```bash
 git submodule update --init --recursive
 ``` 
-3. build rust libs
+3. build rust libs (see "Setting up RUST" step below)
 ```bash
 bash rust/build-rust.sh
 ```
@@ -23,10 +23,13 @@ bash rust/build-rust.sh
 cd Monal
 pod install --repo-update
 ```
-5. open in Xcode and build
+5. open in Xcode
 ```bash
 open Monal.xcworkspace
 ```
+6. Add `LibMonalRustSwiftBridge` as a local project, if not present: In Xcode, go to `File -> Add packages... -> Add local` , select the `rust/LibMonalRustSwiftBridge` directory under Monal's source tree. Make sure that Monal is selected in `Add to project` and the selected target is `monalxmpp` and finally add the package.
+
+7. Build :)
 
 Read here how to use logging with the [Monal UDP Logger](https://github.com/monal-im/Monal/wiki/Introduction-to-use-of-Monal-UDP-Logger) to debug things.
 
@@ -61,6 +64,11 @@ Don't forget to follow the "next steps" printed to your terminal once homebrew f
 ## Step #2: Install Cocoapods via Homebrew
 In the terminal type `brew install cocoapods`
 
-Done.
-
+# Setting up RUST
+1. Install rustup by running `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh` as mentioned in https://www.rust-lang.org/tools/install
+2. Assuming we're in monal's source directory, run `chmod +x rust/build-rust.sh` to make the script executable
+3. If the following error pops up, follow the first answer here: https://stackoverflow.com/questions/68565356/xcrun-error-sdk-iphoneos-cannot-be-located
+`error: failed to get iphoneos SDK path: process exit with error: xcrun: error: SDK "iphoneos" cannot be located
+       xcrun: error: SDK "iphoneos" cannot be located
+       xcrun: error: unable to lookup item 'Path' in SDK 'iphoneos'`
 
