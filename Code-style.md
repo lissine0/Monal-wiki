@@ -15,7 +15,7 @@ else
 
 ## Switch
 ```objc
-catch()
+switch()
 {
     case 0:
         break;
