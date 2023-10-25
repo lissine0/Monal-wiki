@@ -25,8 +25,8 @@ Required modules:
 
 ## Session timeout:
 - Due to its push notification design, Monal has the tendency to login or resume rather a lot.
-  Therefore, it would be good to **increase the XEP-0198 session timeout** to at least **one hour**
-- **Increase** the allowed successful **logins per timeslot**
+  Therefore, it is advised to **increase** the XEP-0198 session timeout to at least **24 hours**
+- **Increase** the allowed successful **logins per timeslot**, if you have adopted a ratelimit for these
 
 ## CSI
 - Make sure you have CSI (Client State Indication) enabled, this will greatly reduce your battery consumption by delaying messages not needed while the app is not in foreground (like typing notifications).
@@ -40,7 +40,7 @@ Required modules:
 - You can check if those modules are activated and usable by Monal by opening your account settings in Monal (Settings --> tap onto your account) and tapping onto the (i) icon in the server column.
   It should show all of these XEPs as supported.
 - You can check if push is correctly supported by your server by opening Settings --> Notifications in Monal.
-- **Publish SRV records** and **prefer TLS over StartTLS** to reduce round trip times.
+- **Publish SRV records** and **prefer TLS over StartTLS (lower priority value)** to reduce round trip times.
   This is important on slow or unreliable mobile networks and improves the user experience and push notification reliability
     ```dns
     _xmpps-client._tcp.example.net. 86400 IN SRV 5 0 5223 xmpp.example.net.
