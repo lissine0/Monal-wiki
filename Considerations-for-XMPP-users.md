@@ -6,9 +6,9 @@
 
 - **Not working notifications:**
   - Make sure to turn on background app refresh in ios settings, see this video:
-    <video width="100%" controls autoplay>
-      <source src="https://github.com/monal-im/Monal/assets/6234248/d181846f-c1ef-4c82-a5a3-d3fcc2702644" type="video/mp4"> 
-    </video>
+
+<video src="https://github.com/monal-im/Monal/assets/6234248/d181846f-c1ef-4c82-a5a3-d3fcc2702644" controls="controls" style="max-width: 730px;">
+</video>
 
 ### macOS version only
 
