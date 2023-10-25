@@ -8,7 +8,13 @@
 ### iOS version only
 
 - **Not working notifications:**
-  - Make sure to turn on background app refresh in ios settings, see this video:
+  - Make sure to turn on background app refresh in iOS settings, see this video:
+
+    <iframe width="560" height="315"
+src="https://www.youtube.com/embed/MUQfKFzIOeU" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
 
 ### macOS version only
 
