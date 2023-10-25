@@ -5,7 +5,7 @@
 ### iOS version only
 
 - **Not working notifications:**
-  - Make sure to turn on background app refresh in iOS settings, see this screenshots:  
+  - Make sure to turn on background app refresh in iOS settings and allow notifications, see this screenshots:  
     <img src="https://github.com/monal-im/Monal/assets/6234248/adda06dc-7a43-45ca-85c6-3ef0f90f6fb9" alt="iOS Settings 1" width="320"/>
     <img src="https://github.com/monal-im/Monal/assets/6234248/d0dc24bf-ab8a-4651-9704-906104b107ae" alt="iOS Settings 2" width="320"/>
 
