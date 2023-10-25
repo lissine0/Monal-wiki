@@ -1,9 +1,5 @@
 ## Selfhost
-<video src="https://github.com/monal-im/Monal/assets/6234248/d181846f-c1ef-4c82-a5a3-d3fcc2702644" controls="controls" style="max-width: 730px;">
-</video>
-
-## Youtube
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MUQfKFzIOeU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<video src="https://github.com/monal-im/Monal/assets/6234248/d181846f-c1ef-4c82-a5a3-d3fcc2702644" type="video/mp4" controls="controls" style="max-width: 730px;"></video>
 
 ### All versions
 
