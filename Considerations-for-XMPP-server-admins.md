@@ -2,7 +2,7 @@
 
 ## Software versions
 <ul>
-<li><b>Ejabberd:</b> You'll need at least version 23.01 (you'll experience push problems and other bugs for older versions).</li>
+<li><b>Ejabberd:</b> You'll need at least version 23.10 (you'll experience push problems and other bugs for older versions).</li>
 <li><b>Prosody:</b> You'll need at least version 0.12 and your community modules must be newer than August 2022.</li>
 <li><b>Other server software:</b> <u>We don't support these, please use one listed above!</u></li>
 </ul>
