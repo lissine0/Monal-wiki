@@ -52,5 +52,6 @@ Required modules:
 
 
 ## STUN / TURN
-- Configure and announce at least one STUN (not STUN**S**) and at least one TURN (not TURN**S**) server.
+- Configure and announce at least one STUN or STUNS, at least one TURN server and optionally one or more TURNS servers.
+- Your TURN server MUST listen and relay udp packets.
 - Your STUN and TURN server must be reachable by IPv4 **and IPv6**.
