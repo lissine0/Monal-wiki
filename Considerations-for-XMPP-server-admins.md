@@ -46,4 +46,11 @@ Required modules:
     _xmpps-client._tcp.example.net. 86400 IN SRV 5 0 5223 xmpp.example.net.
     _xmpp-client._tcp.example.net. 86400 IN SRV 50 0 5222 xmpp.example.net.
     ```
+- While we still support TLS 1.2 we strongly recommend to enable **TLS 1.3** on the XMPP server.
+- Ensure that your XMPP server is reachable via IPv4 **and IPv6** and xmpp.example.net has an according A and AAAA record.
 - See this issue, for common mistakes and solutions: https://github.com/monal-im/Monal/issues/696
+
+
+## STUN / TURN
+- Configure and announce at least one STUN (udp) and at least one TURN (udp) server.
+- Your STUN and TURN server must at least be reachable by **IPv6**. Note that we recommend connectivity via IPv4 and IPv6.
