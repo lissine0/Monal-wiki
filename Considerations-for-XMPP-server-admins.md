@@ -6,7 +6,7 @@
 <li><b>Prosody:</b> You'll need at least version 0.12 and your community modules must be newer than August 2022.</li>
 <li><b>Other server software:</b> <u>We don't support these, please use one listed above!</u></li>
 </ul>
-<b>Use backports for Debian to get recent enough versions and bugfixes!</b>
+<b><u>Use backports for Debian to get recent enough versions and bugfixes!</u></b>
 
 ## eJabberd
 Required modules:
@@ -22,6 +22,14 @@ Required modules:
 * mod_mam
 * mod_csi_battery_saver or mod_csi_simple
 * mod_cloud_notify
+
+**Suggested modules for more secure authentication (only available for prosody trunk or the upcoming v0.13):**  
+[Prosody blog-article about these modules](https://blog.prosody.im/fast-auth/)
+* [mod_sasl_ssdp](https://modules.prosody.im/mod_sasl_ssdp.html)
+* [mod_sasl2](https://modules.prosody.im/mod_sasl2)
+* [mod_sasl2_bind2](https://modules.prosody.im/mod_sasl2_bind2)
+* [mod_sasl2_sm](https://modules.prosody.im/mod_sasl2_sm)
+* [mod_sasl2_fast](https://modules.prosody.im/mod_sasl2_fast)
 
 ## Session timeout
 - Due to its push notification design, Monal has the tendency to login or resume rather a lot.
