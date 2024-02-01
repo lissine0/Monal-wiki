@@ -1,51 +1,31 @@
-If you are interested in testing Monal it is very helpful to take a look at the internal logs. This short introduction will show you how to access the continuously generated logs, but also how to use the built-in Monal UDP Logger. You don't need to understand details, however if you intend to inform the developers about a potential bug, a logfile is very helpful.
+Monal produces extensive logfiles making it possible to debug nearly any bug after it happened, even if it can not be reproduced.
+These logfiles can either be exported as a file by Monal or streamed encrypted to a logserver in realtime.
 
-**Whatever you do: Please do NOT upload log to public repositories, dropboxes etc. as it contains your sensitive data! Of course, if you provide us your logs, that requires some level of trust.**
+**Because these logfiles contain private data: whatever you do, please do NOT upload logfiles to public repositories, dropboxes etc.**
 
-## Step 1: Activate debug menu
+# Access the log
+To get access to the log, you'll have to enable the debug menu in Monal.
+Tap `> 16` times onto the version number in Monal's settings menu, a new menu entry named `Debug` should appear.
 
-To activate the Monal UDP logger AND/OR access your logfiles navigate to `Settings --> Debug`.
-_This menu entry will be hidden on stable builds. You'll have to tap onto the app version number in the settings menu > 16 times to make it visible._
+## Export the logfile
+To export the logfile just tap onto the leftmost button in the bottom button bar and share/save the file.
 
-## Access logfiles
+(The second button is for exporting the database file.)
 
-If you experience a bug, crash or anything else which is worth to investigate you can use the share function (the leftmost button in the bottom button bar) under `Settings --> Debug` and provide the log file to one of the developers. Keep in mind that it may reach a size of about 50 MB. You should try to zip it before sending it via email.
-Enable airplane mode, if Monal keeps crashing while exporting the logfile.
+## Stream the log
+To stream the log to a logserver, just enter the IP, port and encryption key into the textfields shown in the debug menu and turn the switch on that is shown beneath them.
 
-**Hint:** If you are able to reproduce a bug it is always helpful to describe the step you made as well as **the (exact) time** when the error or behavior of interest occurred (the log can grow very big and without a timestamp it is often like finding the famous needle in a haystack for the developers).
+There are two logservers that can be used. The first one is very basic and can be found [over here](https://github.com/monal-im/Monal/tree/develop/UDPLogServer). This one prints the received log to the screen, but is able to save them to a logfile, too.
+See the commandline options displayed with `./server.py --help`.  A typical commandline to save the streamed log to a rawlog file looks something like this: `./server.py -k mysupercoolandsecureencryptionkey -p 5555 -r /tmp/logfile.rawlog`.
 
-## Activate the Monal UDP logger
+The second tool to receive the streamed log data is the graphical LogViewer itself (see next section).
 
-**BEFORE YOU ACTIVE THE LOGGER UNDER `Settings --> Debug`**: Enter a **VERY long and save password** in the password field named `AES encryption key` (with **more than 20 alphanumeric characters**, lower- and uppercase letters, numbers and symbols like _/%$§()_). 
-If you do not do this, it will be very easy for an adversary to decrypt your sensitive data while being sent through the network you are connected to.
+# View the log
+Monal uses structured logging and the used fileformat is length prefixed json dubbed `rawlog`.
+That allows for flexible filtering and searching (just like with systemd's journal).
 
-You will also have to enter the IP address (NOT dns name) and port number the logserver is listening on and activate the UDP logging by toggling the top-right switch. This switch only activates the UDP logger and does not activate/deactivate file based logging!
+To view such a rawlog (either in uncompressed format _(*.rawlog)_ or gzip compressed _(*.rawlog.gz)_ you can use our graphical LogViewer from our [DebugTools repository](https://github.com/monal-im/DebugTools). This repository has pre-packaged versions of all tools as Windows, Linux and macOS binaries and contains other tools like the CrashAnalyzer (which allows to view crash reports), too.
 
-### Receive the UDP log on a computer
+The LogViewer has an input field for filtering which accepts python code that must be evaluable to True/False. All fields of a logline can be accessed as variables. Doubleklick onto a logline to display all fields and their corresponding values. To copy these to the filter textfield, just doubleklick onto them (name or value). The search textfield accepts python input, too. Both textfields also provide an autocompletion for field names.
 
-If you are interested to receive log messages directly from a work environment meaning e.g. your personal computer and see the log flowing in in real-time in your shell you can do the following:
-
-For a **Linux operating system (Debian/Ubuntu)**:
-
-**1.** Install python to your system (here from Python 3):
-
-Furthermore, run this shell command:
-- `sudo apt-get install python3-pycryptodome`
-
-**2.** Create a folder on your system and place the Python file in there:
-https://github.com/monal-im/Monal/tree/develop/UDPLogServer
-
-_Of course, you can simply clone the repository, too._
-
-**3.** Get your systems IP with this command: `sudo ip addr show`
-
-The third section of the output will show you your device IP. This IP must be typed into the logger field `Hostname/IP of Logserver`.
-Also enter the Port number in the field `Port of Logserver`. Usually `5555` should be fine (unless you configure your logserver to use some other port via the -p command line option).
-
-**4.** Access the folder with your command shell and enter the following command:
-
-`python3 server.py -k YourLongAndSavePASSWORD` 
-
-If you want to write the output into a file you can use this extended command:
-
-`python3 server.py -k YourLongAndSavePASSWORD -f logs.txt`
+Colors, font, log formatting etc. can be freely configured in the settings.
