@@ -28,4 +28,6 @@ To view such a rawlog (either in uncompressed format _(*.rawlog)_ or gzip compre
 
 The LogViewer has an input field for filtering which accepts python code that must be evaluable to True/False. All fields of a logline can be accessed as variables. Doubleklick onto a logline to display all fields and their corresponding values. To copy these to the filter textfield, just doubleklick onto them (name or value). The search textfield accepts python input, too. Both textfields also provide an autocompletion for field names.
 
+To save the current ui state (scroll position, selected logline, filter, search etc.), you can press `STRG++` to put those onto a stack. `STRG+-` will fifo-pop the last entry from the stack and restore the ui to that state. This can be handy if you have to jump a lot while analyzing the logfile.
+
 Colors, font, log formatting etc. can be freely configured in the settings.
