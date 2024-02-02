@@ -21,7 +21,7 @@ See the commandline options displayed with `./server.py --help`.  A typical comm
 The second tool to receive the streamed log data is the graphical LogViewer itself (see next section).
 
 # View the log
-Monal uses structured logging and the used fileformat is length prefixed json dubbed `rawlog`.
+Monal uses structured logging and the used file format is length prefixed json dubbed `rawlog`.
 That allows for flexible filtering and searching (just like with systemd's journal).
 
 To view such a rawlog (either in uncompressed format _(*.rawlog)_ or gzip compressed _(*.rawlog.gz)_ you can use our graphical LogViewer from our [DebugTools repository](https://github.com/monal-im/DebugTools). This repository has pre-packaged versions of all tools as Windows, Linux and macOS binaries and contains other tools like the [CrashAnalyzer](CrashAnalyzer) (which allows to view crash reports), too.
