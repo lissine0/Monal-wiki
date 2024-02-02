@@ -20,7 +20,7 @@
 
 - Monal internals - [The Handler Framework](Handler-Framework)
 
-- [Introduction to the Monal (UDP) Logger & Log Export](Introduction-to-Monal-Logging)
+- [Introduction to the Monal Logger & Log Export](Introduction-to-Monal-Logging)
 
 - [Monal Crash Analyzer](Crash-Analyzer)
 
