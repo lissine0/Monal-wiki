@@ -24,7 +24,7 @@ The second tool to receive the streamed log data is the graphical LogViewer itse
 Monal uses structured logging and the used file format is length prefixed json dubbed `rawlog`.
 That allows for flexible filtering and searching (just like with systemd's journal).
 
-To view such a rawlog (either in uncompressed format _(*.rawlog)_ or gzip compressed _(*.rawlog.gz)_ you can use our graphical LogViewer from our [DebugTools repository](https://github.com/monal-im/DebugTools). This repository has pre-packaged versions of all tools as Windows, Linux and macOS binaries and contains other tools like the [CrashAnalyzer](Crash-Analyzer) (which allows to view crash reports), too.
+To view such a rawlog (either in uncompressed format _(*.rawlog)_ or gzip compressed _(*.rawlog.gz)_ you can use our graphical LogViewer from our [DebugTools repository](https://github.com/monal-im/DebugTools). This repository has pre-packaged versions of all tools as Windows, Linux and macOS binaries and contains other tools like the [CrashAnalyzer](Crash-Analyzer) (which allows to view crash reports), too. Releases are tagged by their tool prefixes (MLV, MCA etc.).
 
 The LogViewer has an input field for filtering which accepts python code that must be evaluable to True/False. All fields of a logline can be accessed as variables. Doubleklick onto a logline to display all fields and their corresponding values. To copy these to the filter textfield, just doubleklick onto them (name or value). The search textfield accepts python input, too. Both textfields also provide an autocompletion for field names.
 
