@@ -22,5 +22,7 @@
 
 - [Introduction to the Monal (UDP) Logger & Log Export](Introduction-to-Monal-Logging)
 
+- [Monal Crash Analyzer](Crash-Analyzer)
+
 ## WIP
 - [App Store Privacy Labels: Collection and usage of data in Monal](App-Store-Privacy-Labels)
