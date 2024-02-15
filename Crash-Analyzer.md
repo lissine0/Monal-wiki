@@ -1,5 +1,5 @@
 The CrashAnalyzer resides in the [DebugTools repository](https://github.com/monal-im/DebugTools),
-This repository has pre-packaged versions of all tools as Windows, Linux and macOS binaries and contains other tools like the [LogViewer](Introduction-to-Monal-Logging) (which allows to view logfiles), too. Releases are tagged by their tool prefixes (MCA, MLV etc.).
+This repository has pre-packaged versions of all tools as Windows, Linux and macOS binaries and contains other tools like the [LogViewer](Introduction-to-Monal-Logging#view-the-log) (which allows to view logfiles), too. Releases are tagged by their tool prefixes (MCA, MLV etc.).
 
 If you open a crash report sent by Monal using the CrashAnalyzer, you'll get a list of files contained in the crash report.
 These files can be viewed (single click) or exported (double click). An export of all files into one directory is possible, too.
