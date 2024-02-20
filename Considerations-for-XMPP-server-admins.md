@@ -18,6 +18,8 @@ Required modules:
 * mod_push_keepalive
 * mod_mam
 
+**Suggested server version for more secure authentication (SALS2): 24.xx**  
+
 ## Prosody
 Required modules:
 * mod_smacks
@@ -25,13 +27,20 @@ Required modules:
 * mod_csi_battery_saver or mod_csi_simple
 * mod_cloud_notify
 
-**Suggested modules for more secure authentication (only available for prosody trunk or the upcoming v0.13):**  
+**Suggested modules for more secure authentication (SASL2), only available for prosody trunk or the upcoming v0.13:**  
 [Prosody blog-article about these modules](https://blog.prosody.im/fast-auth/)
 * [mod_sasl_ssdp](https://modules.prosody.im/mod_sasl_ssdp.html)
 * [mod_sasl2](https://modules.prosody.im/mod_sasl2)
 * [mod_sasl2_bind2](https://modules.prosody.im/mod_sasl2_bind2)
 * [mod_sasl2_sm](https://modules.prosody.im/mod_sasl2_sm)
 * [mod_sasl2_fast](https://modules.prosody.im/mod_sasl2_fast)
+
+## Openfire
+Required modules:
+* [Push Notification](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=pushnotification) - for push notifications
+* [Monitoring Service](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=monitoring) - for MAM support, you'll loose messages without
+* [HTTP File Upload](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=httpfileupload) - for file transfers
+
 
 ## Session timeout
 - Due to its push notification design, Monal has the tendency to login or resume rather a lot.
