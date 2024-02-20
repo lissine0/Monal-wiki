@@ -1,6 +1,6 @@
 ### Read this complete document thorougly!
 
-## Software versions
+# Software versions
 <ul>
 <li><b>Ejabberd:</b> You'll need at least version 23.10 (you'll experience push problems and other bugs for older versions).</li>
 <li><b>Prosody:</b> You'll need at least version 0.12 and your community modules must be newer than August 2022.</li>
@@ -41,6 +41,8 @@ Required modules:
 * [Monitoring Service](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=monitoring) - for MAM support, you'll loose messages without
 * [HTTP File Upload](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=httpfileupload) - for file transfers
 
+# Other settings (all servers)
+These are settings you should consider for all servers.
 
 ## Session timeout
 - Due to its push notification design, Monal has the tendency to login or resume rather a lot.
