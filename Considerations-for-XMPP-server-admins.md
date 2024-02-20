@@ -38,7 +38,7 @@ Required modules:
 ## Openfire
 Required modules:
 * [Push Notification](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=pushnotification) - for push notifications
-* [Monitoring Service](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=monitoring) - for MAM support, you'll loose messages without
+* [Monitoring Service](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=monitoring) - for MAM support, you'll loose messages without this
 * [HTTP File Upload](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=httpfileupload) - for file transfers
 
 # Other settings (all servers)
