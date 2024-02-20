@@ -1,6 +1,7 @@
 ### All versions
 
-- **Server software:** Make sure that your server runs Prosody or Ejabberd, supported versions are listed under [Considerations for XMPP server admins](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins)
+- **Server software:** Make sure that your server runs Prosody, Ejabberd or Openfire, supported versions are listed under [Considerations for XMPP server admins](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins).  
+<u>Avoid all other servers!</u>
 
 ### iOS version only
 
