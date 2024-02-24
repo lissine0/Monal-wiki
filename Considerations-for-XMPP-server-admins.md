@@ -12,22 +12,16 @@
 <b><u>Use backports for Debian to get recent enough versions and bugfixes!</u></b>
 
 ## eJabberd
-Required modules:
+**Suggested server version for more secure authentication (SALS2): 24.xx**
+
+**Required modules:**
 * mod_client_state
 * mod_stream_mgmt
 * mod_push
 * mod_push_keepalive
 * mod_mam
 
-**Suggested server version for more secure authentication (SALS2): 24.xx**  
-
 ## Prosody
-Required modules:
-* mod_smacks
-* mod_mam
-* mod_csi_battery_saver or mod_csi_simple
-* mod_cloud_notify
-
 **Suggested modules for more secure authentication (SASL2), only available for prosody trunk or the upcoming v0.13:**  
 [Prosody blog-article about these modules](https://blog.prosody.im/fast-auth/)
 * [mod_sasl_ssdp](https://modules.prosody.im/mod_sasl_ssdp.html)
@@ -36,8 +30,14 @@ Required modules:
 * [mod_sasl2_sm](https://modules.prosody.im/mod_sasl2_sm)
 * [mod_sasl2_fast](https://modules.prosody.im/mod_sasl2_fast)
 
+**Required modules:**
+* mod_smacks
+* mod_mam
+* mod_csi_battery_saver or mod_csi_simple
+* mod_cloud_notify
+
 ## Openfire
-Required modules:
+**Required modules:**
 * [Push Notification](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=pushnotification) - for push notifications
 * [Monitoring Service](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=monitoring) - for MAM support, you'll loose messages without this
 * [HTTP File Upload](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=httpfileupload) - for file transfers
