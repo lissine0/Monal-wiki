@@ -37,6 +37,8 @@
 * mod_cloud_notify
 
 ## Openfire
+**Suggested server version for more secure authentication (SALS2): not supported yet**
+
 **Required modules:**
 * [Push Notification](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=pushnotification) - for push notifications
 * [Monitoring Service](https://www.igniterealtime.org/projects/openfire/plugin-archive.jsp?plugin=monitoring) - for MAM support, you'll loose messages without this
