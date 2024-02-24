@@ -6,6 +6,7 @@
 <li><b>Prosody:</b> You'll need at least version 0.12 and your community modules must be newer than August 2022.</li>
 <li><b>Openfire:</b> You'll need at least version 4.8.1.</li>
 <li><b>Metronome:</b> This software is abandoned or seriously understaffed. Many thing (like omemo) won't work. <u>Avoid when possible!</u></li>
+<li><b>Yunohost:</b> This uses Metronome by default. Use either prosody or avoid Yunohost at all</li>
 <li><b>Other server software:</b> <u>We don't support these, please use one listed above!</u></li>
 </ul>
 <b><u>Use backports for Debian to get recent enough versions and bugfixes!</u></b>
