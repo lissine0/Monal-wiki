@@ -12,7 +12,7 @@
 <b><u>Use backports for Debian to get recent enough versions and bugfixes!</u></b>
 
 ## eJabberd
-**Suggested server version for more secure authentication (SALS2): 24.xx**
+**Suggested server version for more secure authentication (SALS2): 24.02**
 
 **Required modules:**
 * mod_client_state
@@ -53,7 +53,7 @@ These are settings you should consider for all servers.
 
 ## Login
 - **Increase** the allowed successful **logins per timeslot**, if you have adopted a ratelimit for these
-- Enable SASL2 on your server if possible
+- Enable SASL2 on your server if possible, see above
 
 ## CSI
 - Make sure you have CSI (Client State Indication) enabled, this will greatly reduce your battery consumption by delaying messages not needed while the app is not in foreground (like typing notifications).
