@@ -15,4 +15,4 @@
 # Apply for a GSOC Task listed in the XMPP wiki
 To apply for this task **after completing the above teaser task requirements** just send a message to the public support channel linked above.
 
-If not already present, I will create an issue for the task, assign you and we can discuss everything related to the task in this github issue (or for quick questions via 1:1 chat).
+If not already present, I will create an issue for the task, assign you and we can discuss everything related to the task in this github issue (or, for quick questions, via 1:1 chat).
