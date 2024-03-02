@@ -1,4 +1,5 @@
 # Prerequisites 
+0. Read the [GSOC 2024 xmpp wiki page](https://wiki.xmpp.org/web/Google_Summer_of_Code_2024) as well as the official GSOC 2024 guidlines by Google _**thoroughly**_
 1. Create an XMPP account
 2. Join our public support channel under [monal@chat.yax.im](xmpp:monal@chat.yax.im?join)
 3. Create a github account
