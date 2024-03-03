@@ -14,7 +14,7 @@
 
 ## Contributing and Debugging
 
-- [GSOC 2024 _Guidline](GSOC-2024-Guidline)
+- [GSOC 2024 Guidline](GSOC-2024-Guidline)
 
 - [Building Monal](Building-Monal)
 
