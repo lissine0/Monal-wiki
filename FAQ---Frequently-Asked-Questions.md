@@ -20,7 +20,7 @@ Monal does not host your account --&gt; you'll have to ask your server operator 
 <details>
 <summary>Give me an answer</summary><br>
 If push for groups/channels or 1:1 chats doesn't work like expected, you'll most likely have an old version of Prosody or Ejabberd installed on your server.<br><br><ul>
-<li><b>Ejabberd:</b> You'll need at least version 22.05</li>
+<li><b>Ejabberd:</b> You'll need at least version 23.10</li>
 <li><b>Prosody:</b> You'll need at least version 0.12 and your community modules must be newer than August 2022</li>
 </ul>
 Please read the <a href="https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins">considerations for XMPP server admins</a>, too!
