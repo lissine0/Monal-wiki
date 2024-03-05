@@ -109,9 +109,9 @@ Learn how to do it here: [Exporting-Logfiles](https://github.com/monal-im/Monal/
 
 Self-signed certificates are an anachronism.
 
-Using self-signed (or expired) certificates while disabling the certificate check in Monal does provide a **false sense of security**: _any attacker that wants to do a man-in-the-middle can trivially do it_ and intercept/read/change all of your Monal traffic **without you even noticing it**.
+Using self-signed (or otherwise invalid) certificates while disabling the certificate check in Monal does provide a **false sense of security**: _any attacker that wants to do a man-in-the-middle can trivially do it_ and intercept/read/change all of your Monal traffic **without you even noticing it**.
 
-Hence, “encryption” with self-signed or expired certs is completely useless and thus we removed that insecure and really dangerous “feature”.
+Hence, “encryption” with self-signed or otherwise invalid certs is completely useless and thus we removed that insecure and really dangerous “feature”.
 
 **Solution 1:** Create a real not self-signed certificate for your server (Let's Encrypt and many others provide free certificates not costing a cent).
 See [Let's Encrypt: getting started](https://letsencrypt.org/getting-started/)
