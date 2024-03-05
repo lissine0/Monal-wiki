@@ -103,9 +103,9 @@ Exporting and sending your logfiles to the developers does help them pinpoint a 
 Learn how to do it here: [Exporting-Logfiles](https://github.com/monal-im/Monal/wiki/Introduction-to-Monal-Logging)
 </details>
 
-### Why doesn't Monal allow self-signed or expired certificates?
+### Why doesn't Monal allow self-signed, expired or otherwise invalid certificates?
 <details>
-<summary>Give me an answer (asked 8 times)</summary><br>
+<summary>Give me an answer (asked 9 times)</summary><br>
 
 Self-signed certificates are an anachronism.
 
