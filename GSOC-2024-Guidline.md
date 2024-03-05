@@ -6,7 +6,8 @@
 3. Add my private xmpp contact at [thilo.molitor@juforum.de](xmpp:thilo.molitor@juforum.de)
 4. Send me your github name in the private chat
 
-# Selecting a Teaser Task
+# Selecting Teaser Tasks before applying for GSOC 2024
+These teaser tasks help us select which applicant to choose based on their communication with us and the community as well as the code they write
 1. Everyone should at least complete 2 of the [Short GSOC Teaser Tasks](https://github.com/monal-im/Monal/issues?q=is%3Aopen+is%3Aissue+label%3A%22%F0%9F%8E%83+Short+GSOC+Teaser%22+)
 2. Everyone should at least complete one [GSOC Teaser Task](https://github.com/monal-im/Monal/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%8E%83+GSOC+Teaser%22)
 3. To get assigned to a task, write a comment in the corresponding github issue
