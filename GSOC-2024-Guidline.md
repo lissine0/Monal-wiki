@@ -13,6 +13,8 @@ These teaser tasks help us select which applicant to choose based on their commu
 3. To get assigned to a task, write a comment in the corresponding github issue
 4. If you want to complete some issue that's not labeled as GSOC Teaser, just go ahead and write a comment in that issue. I will estimate it's size and assign an appropriate label afterwards (`Short GSOC Teaser` or `GSOC Teaser`)
 
+**Please stick to our [Coding Style](Code-style)**
+
 # Apply for a GSOC Task listed in the XMPP wiki
 To apply for this task **after completing the above teaser task requirements** just send a message to the public support channel linked above.
 
