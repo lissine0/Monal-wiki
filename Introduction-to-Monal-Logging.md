@@ -7,13 +7,12 @@ These logfiles can either be exported as a file by Monal or streamed encrypted t
 To get access to the log, you'll have to enable the debug menu in Monal.
 Tap `> 16` times onto the version number in Monal's settings menu, a new menu entry named `Debug` should appear.
 
-## Export the logfile
-To export the logfile just tap onto the leftmost button in the bottom button bar and share/save the file.
-
-(The second button is for exporting the database file.)
+## Export the logfile (or database)
+To export the logfile/database switch the debug menu tab to "Logs" and just tap onto the filename to share/save the file.
+The file will not be compressed, so applying some compression before sending it to us would be helpful because these logs can get quite large without.
 
 ## Stream the log
-To stream the log to a logserver, just enter the IP, port and encryption key into the textfields shown in the debug menu and turn the switch on that is shown beneath them.
+To stream the log to a logserver, just enter the IP, port and encryption key into the textfields shown when switching the debug menu tab to "UDP Logger" and turn the "Enable" switch on.
 
 There are two logservers that can be used. The first one is very basic and can be found [over here](https://github.com/monal-im/Monal/tree/develop/UDPLogServer). This one prints the received log to the screen, but is able to save them to a logfile, too.
 See the commandline options displayed with `./server.py --help`.  A typical commandline to save the streamed log to a rawlog file looks something like this: `./server.py -k mysupercoolandsecureencryptionkey -p 5555 -r /tmp/logfile.rawlog`.
