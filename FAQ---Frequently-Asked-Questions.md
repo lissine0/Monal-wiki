@@ -1,5 +1,11 @@
 ## Once in a while question on Monal appear quite often, so we try to accumulate them here.
 
+### Apple's battery overview says Monal is consuming a lot of battery, why?
+<details>
+<summary>Give me an answer</summary><br>
+This isn't a "real" battery consumption but based on Apple's poor battery consumption estimate. <a href="https://github.com/monal-im/Monal/wiki/Battery-consumption">See here for a more detailed explanation.</a>
+</details>
+
 ### What server software does Monal support and how should I configure these
 <details>
 <summary>Give me an answer</summary><br>
