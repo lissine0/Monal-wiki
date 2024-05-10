@@ -20,6 +20,8 @@ That said: estimating the battery consumption is hard and a really accurate esti
 
 ## But, why is Monal listed as one of the apps with highest battery consumption while others aren't?
 
+**First of all, make sure to use a server having a CSI module active because that will reduce the amount of XMPP protocol related "messages" that actually generate a push to only those that are important (e.g. new incoming messages, pushes to remove notifications for messages read on another device, incoming calls etc.). See our [Considerations for XMPP server admins](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins) for more details.**
+
 Every message you receive (either in a 1:1 chat or in a group/channel) triggers a push notification to your device.
 These push notifications can either just contain the message that should be displayed which would be visible to Apple's servers, or be only a wakeup signal for the app to connect to the XMPP server and retrieve the actual message.
 As privacy focused app, Monal naturally does the latter.
@@ -30,8 +32,6 @@ But since most of the time a second message follows suit after a few seconds, di
 That means more traffic and more CPU consumption. So Monal uses the full 30 seconds timeframe to wait for another message while just sitting idle and doing nothing. This virtually consumes no battery opposed to the traffic generated and amount of CPU time consumed by doing this whole dance again (build the encrypted TLS channel, log in to the XMPP server, retrieve the pending messages).
 
 *Unfortunately using the full 30 seconds makes Monal look very bad in Apple's battery consumption display while in reality it isn't.*
-
-**Make sure to use a server having a CSI module active because that will reduce the amount of XMPP protocol related "messages" that actually generate a push to only those that are important (e.g. new incoming messages, pushes to remove notifications for messages read on another device, incoming calls etc.).**
 
 ### Help wanted
 My claims can be tested by checking and comparing the actual battery consumption (the change in total battery percentage) when using the phone with and without Monal. Ideally as an average over, say, 7 days with and 7 days without Monal.
