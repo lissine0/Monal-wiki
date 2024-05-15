@@ -20,7 +20,7 @@ That said: estimating the battery consumption is hard and a really accurate esti
 
 ## But, why is Monal listed as one of the apps with highest battery consumption while others aren't?
 
-**First of all, make sure to use a server having a CSI module active because that will reduce the amount of XMPP protocol related "messages" that actually generate a push to only those that are important (e.g. new incoming messages, pushes to remove notifications for messages read on another device, incoming calls etc.). See our [Considerations for XMPP server admins](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins) for more details.**
+**First of all, make sure to use a server having a CSI module active because that will reduce the amount of XMPP protocol related "messages" that actually generate a push to only those that are important (e.g. new incoming messages, pushes to remove notifications for messages read on another device, incoming calls etc.). This has a huge impact on battery consumption! See our [Considerations for XMPP server admins](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins) for more details.**
 
 Every message you receive (either in a 1:1 chat or in a group/channel) triggers a push notification to your device.
 These push notifications can either just contain the message that should be displayed which would be visible to Apple's servers, or be only a wakeup signal for the app to connect to the XMPP server and retrieve the actual message.
