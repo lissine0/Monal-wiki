@@ -9,7 +9,7 @@ This isn't a "real" battery consumption but based on Apple's poor battery consum
 ### What server software does Monal support and how should I configure these
 <details>
 <summary>Give me an answer</summary><br>
-Monal <b>only</b> supports Prosody and Ejabberd, See our <a href="https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins">considerations for server admins</a> for more details and configuration hints.
+Monal <b>only</b> supports Prosody, Ejabberd and Openfire. See our <a href="https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins">considerations for server admins</a> for more details and configuration hints.
 </details>
 
 ### How can I reset my password
