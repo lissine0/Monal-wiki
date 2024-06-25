@@ -20,6 +20,7 @@
 * mod_push
 * mod_push_keepalive
 * mod_mam
+* mod_muc_occupantid
 
 ## Prosody
 **Suggested modules for more secure authentication (SASL2), only available for prosody trunk or the upcoming v0.13:**  
