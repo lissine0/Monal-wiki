@@ -29,7 +29,7 @@ As privacy focused app, Monal naturally does the latter.
 Every of these wakeup pushes grants Monal 30 seconds of background time before iOS freezes the app again. In these 30 seconds Monal (tries) to connect to the XMPP server, log in using your credentials, retrieve all pending messages and disconnect again.
 
 But since most of the time a second message follows suit after a few seconds, directly disconnecting after retrieving everything *currently* pending would just generate another push a few seconds later and Monal would have to do this connect-log-in-retrieve dance again.
-That means more traffic and more CPU consumption. So Monal uses the full 30 seconds timeframe to wait for another message while just sitting idle and doing nothing. This virtually consumes no battery opposed to the traffic generated and amount of CPU time consumed by doing this whole dance again (build the encrypted TLS channel, log in to the XMPP server, retrieve the pending messages).
+That means more traffic and more CPU consumption. So Monal uses the full 30 seconds timeframe to wait for another message while just sitting idle and doing nothing. This virtually consumes no battery as opposed to the traffic generated and amount of CPU time consumed by doing this whole dance again (build the encrypted TLS channel, log in to the XMPP server, retrieve the pending messages).
 
 *Unfortunately using the full 30 seconds makes Monal look very bad in Apple's battery consumption display while in reality it isn't.*
 
