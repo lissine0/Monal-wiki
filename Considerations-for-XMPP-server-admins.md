@@ -2,7 +2,7 @@
 
 # Software versions
 <ul>
-<li><b>Ejabberd:</b> You'll need at least version 23.10 (you'll experience push problems and other bugs for older versions).</li>
+<li><b>Ejabberd:</b> You'll need at least version 23.10 (you'll experience push and omemo problems and other bugs for older versions).</li>
 <li><b>Prosody:</b> You'll need at least version 0.12 and your community modules must be newer than August 2022.</li>
 <li><b>Openfire:</b> You'll need at least version 4.8.1.</li>
 <li><b>Metronome:</b> This software is abandoned or seriously understaffed. Many thing (like omemo) won't work. <u>Avoid when possible!</u></li>
