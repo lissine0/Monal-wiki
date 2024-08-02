@@ -18,7 +18,7 @@ git submodule update --init --recursive
 ```bash
 bash rust/build-rust.sh
 ```
-4. install dependencies
+4. install dependencies (see [below](https://github.com/monal-im/Monal/wiki/Building-Monal#installing-cocoapods) how to install cocoapods properly!!)
 ```bash
 cd Monal
 pod install --repo-update
