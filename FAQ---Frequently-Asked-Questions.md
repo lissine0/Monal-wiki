@@ -1,5 +1,3 @@
-## Once in a while question on Monal appear quite often, so we try to accumulate them here.
-
 ### Apple's battery overview says Monal is consuming a lot of battery, why?
 <details>
 <summary>Give me an answer</summary><br>
