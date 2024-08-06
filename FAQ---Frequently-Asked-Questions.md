@@ -1,18 +1,15 @@
-### Apple's battery overview says Monal is consuming a lot of battery, why?
 <details>
-<summary>Give me an answer</summary><br>
+<summary><b>Apple's battery overview says Monal is consuming a lot of battery, why?</b></summary><br>
 This isn't a "real" battery consumption but based on Apple's battery consumption estimate not being optimized for this type of app. <a href="https://github.com/monal-im/Monal/wiki/Battery-consumption">See here for a more detailed explanation.</a>
 </details>
 
-### What server software does Monal support and how should I configure these
 <details>
-<summary>Give me an answer</summary><br>
+<summary><b>What server software does Monal support and how should I configure these?</b></summary><br>
 Monal <b>only</b> supports Prosody, Ejabberd and Openfire. See our <a href="https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins">considerations for server admins</a> for more details and configuration hints.
 </details>
 
-### How can I reset my password
 <details>
-<summary>Give me an answer</summary><br>
+<summary><b>How can I reset my password?</b></summary><br>
 You can change your password by going to Settings --&gt; your account --&gt; Change Password.  
 <br><br>
 If you don't know your current password, there is nothing Monal can do for you:
@@ -20,9 +17,8 @@ If you don't know your current password, there is nothing Monal can do for you:
 Monal does not host your account --&gt; you'll have to ask your server operator to reset your password.
 </details>
 
-### Push doesn't work
 <details>
-<summary>Give me an answer</summary><br>
+<summary><b>Push doesn't work!</b></summary><br>
 If push for groups/channels or 1:1 chats doesn't work like expected, you'll most likely have an old version of Prosody or Ejabberd installed on your server.<br><br><ul>
 <li><b>Ejabberd:</b> You'll need at least version 23.10</li>
 <li><b>Prosody:</b> You'll need at least version 0.12 and your community modules must be newer than August 2022</li>
@@ -30,9 +26,8 @@ If push for groups/channels or 1:1 chats doesn't work like expected, you'll most
 Please read the <a href="https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-server-admins">considerations for XMPP server admins</a>, too!
 </details>
 
-### What does "online" and "offline" mean in Monal?
 <details>
-<summary>Give me an answer</summary><br>
+<summary><b>What does "online" and "offline" mean in Monal?</b></summary><br>
 
 Historically in XMPP `online` meat _client is connected_ and `offline` meant _client is NOT connected_.
 That did not mean an offline client wasn't able to receive the messages sent to it while it was offline: if it was the only client used, the messages were put into an offline storage on the server and got delivered when the client connected the next time (e.g. “went online”).
@@ -61,16 +56,14 @@ For Monal, we chose to show `online` to indicate that these contacts are likely 
 **--> Other solution: ignore the `online`/`offline` indicators all together**
 </details>
 
-### I've got a sync error, what's that all about
 <details>
-<summary>Give me an answer</summary>
+<summary><b>I've got a sync error, what's that all about?</b></summary>
 <br>
 See this wiki article for an answer: <a href="https://github.com/monal-im/Monal/wiki/What-is-that-Sync-Error-all-about">What is that Sync-Error all about</a>
 </details>
 
-### Why isn't Feature/UI implemented or Bug fixed?
 <details>
-<summary>Give me an answer</summary>
+<summary><b>Why isn't Feature/UI implemented or Bug fixed?</b></summary>
 <br>
 We’d love to change a lot of things regarding the overall UI experience.
 Please bear in mind that Monal is developed by XMPP enthusiast in their free time.
@@ -89,27 +82,24 @@ Please consider supporting us. Either by
 Thanks in advance.
 </details>
 
-### Monal is slow and unresponsive if I connect to my existing account the first time?!
 <details>
-<summary>Give me an answer</summary><br>
+<summary><b>Monal is slow and unresponsive if I connect to my existing account the first time?!</b></summary><br>
 
 Monal loads all your and your contacts OMEMO bundles when you login the first time.That may take some time on first setup.
 
 You may also take a look at the [considerations for XMPP users!](https://github.com/monal-im/Monal/wiki/Considerations-for-XMPP-users)
 </details>
 
-### How to export a log file?
 <details>
-<summary>Give me an answer</summary><br>
+<summary><b>How to export a log file?</b></summary><br>
 
 Exporting and sending your logfiles to the developers does help them pinpoint a problem you have with Monal and solve it faster.
 
 Learn how to do it here: [Exporting-Logfiles](https://github.com/monal-im/Monal/wiki/Introduction-to-Monal-Logging)
 </details>
 
-### Why doesn't Monal allow self-signed, expired or otherwise invalid certificates?
 <details>
-<summary>Give me an answer (asked 11 times)</summary><br>
+<summary><b>Why doesn't Monal allow self-signed, expired or otherwise invalid certificates? (asked 11 times)</b></summary><br>
 
 Self-signed certificates are an anachronism.
 
@@ -126,16 +116,14 @@ Importing and enabling CA certificates is not that hard on iOS, just import the 
 And no: letting people manually verify/approve fingerprints of certificates for security is just unrealistic.
 </details>
 
-### How to delete all messages for a contact or group chat (MUC)?
 <details>
-<summary>Give me an answer</summary><br>
+<summary><b>How to delete all messages for a contact or group chat (MUC)?</b></summary><br>
 
 You can delete the message history of a contact via the 'Clear chat history for this contact' button in the contact's profile you can reach when tapping onto the top bar telling you the contact's name.
 </details>
 
-### How to delete a contact?
 <details>
-<summary>Give me an answer</summary><br>
+<summary><b>How to delete a contact?</b></summary><br>
 
 1. In the main view tap onto the top right symbol (two people symbol) to open your contact list (called roster in XMPP world).
 2. In the contact list press and hold the contact entry and swipe to the left until it disappears as 'Remove contact'.
@@ -143,17 +131,15 @@ You can delete the message history of a contact via the 'Clear chat history for 
 Alternatively, you can delete a contact via the 'Remove contact' button in the contact's profile you can reach when tapping onto the top bar telling you the contact's name.
 </details>
 
-### How to remove a group chat or channel (MUC)?
 <details>
-<summary>Give me an answer</summary><br>
+<summary><b>How to remove a group chat or channel (MUC)?</b></summary><br>
 
 1. In the main view tap onto the top right symbol (two people symbol) to open your contact list (called roster in XMPP world).
 2. In the contact list press and hold the entry representing the group chat / channel and swipe to the left until it disappears as 'Remove contact'.
 </details>
 
-### How to add a new group chat / channel (MUC) or User / JID to your contact list?
 <details>
-<summary>Give me an answer</summary><br>
+<summary><b>How to add a new group chat / channel (MUC) or User / JID to your contact list?</b></summary><br>
 
 1. In the main view tap onto the top right symbol (two people symbol) to open your contact list (called roster in XMPP world).
 2. In the appearing contact list tap onto the top right plus (+) symbol.
