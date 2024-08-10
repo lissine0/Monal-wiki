@@ -36,3 +36,5 @@ That means more traffic and more CPU consumption. So Monal uses the full 30 seco
 ### Help wanted
 My claims can be tested by checking and comparing the actual battery consumption (the change in total battery percentage) when using the phone with and without Monal. Ideally as an average over, say, 7 days with and 7 days without Monal.
 If anyone is willing to try this, let me know, I'd be curious to see what battery consumption Monal really has (and maybe we can even improve things further)!
+
+You can use [this Apple Shortcut](https://raw.githubusercontent.com/monal-im/Monal/develop/scripts/power_consumption.shortcut) to record battery usage. Just import this into the Shortcuts app, select the directory to save the logfiles into and use the automation to automatically run it when the charger is connected/disconnected. You can send in your data as Zip-file to info@monal-im.org. Please include some explanation if Monal was installed during your recording or not.
