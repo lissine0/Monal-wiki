@@ -12,6 +12,8 @@
 
 - [The developers asked you to provide a logfile?](Introduction-to-Monal-Logging)
 
+- [Battery consumption](https://github.com/monal-im/Monal/wiki/Battery-consumption)
+
 ## Contributing and Debugging
 
 - [GSOC 2024 Guidline](GSOC-2024-Guidline)
