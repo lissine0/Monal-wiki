@@ -1,7 +1,7 @@
 Monal produces extensive logfiles making it possible to debug nearly any bug after it happened, even if it can not be reproduced.
 These logfiles can either be exported as a file by Monal or streamed encrypted to a logserver in realtime.
 
-**Because these logfiles contain private data: whatever you do, please do NOT upload logfiles to public repositories, dropboxes etc.**
+**Because these logfiles contain private data and even chat messages: whatever you do, please do NOT upload logfiles to public repositories, dropboxes etc.**
 
 # Access the log
 To get access to the log, you'll have to enable the debug menu in Monal.
