@@ -63,10 +63,12 @@ If you want to select XML nodes on the basis of their XML attributes, you can li
 - **Element attribute matches regular expression**:  
 To select XML nodes on the basis of their XML attributes, but using a regular expression, you'll have to use `attributeName~regex` pairs inside `< >`. No format string specifiers will be repaced inside your regular expression following the `~`. You'll have to use `^` and `$` to match begin and end of the attribute string yourself, e.g. `<attributeName~.>` will match all attribute values having **at least** one character, while `<attributeName~^.$>` will match all attribute values having **exactly** one character.
 
-Example:
+Examples:
 ```xml
 <outerWrapper xmlns="
 ```
+
+[...]
 
 ## Extraction Commands
 An extraction command can be appended to the last path segment. Without those extraction commands, `find:` will return the full `MLXMLNode` matching the selection criteria of the XML query. If you rather want to read a special attribute, element value etc. of the full XML node, you'll have to use one of these extractions commands:
@@ -102,3 +104,9 @@ This will use the `HelperTools` method `dataWithBase64EncodedString:` to parse t
 This will try to parse the given `NSString` into an `NSUUID` object using the `initWithUUIDString` initializer of `NSUUID`. This will return `nil` for an invalid string, which will omit this result from the `NSArray` returned by `find:`.
 - `uuidcast`:  
 This will do the same as the `uuid` conversion command for valid uuid strings, but use the `HelperTools`method `stringToUUID` to cast any other given string to a UUIDv4 by hashing it using SHA256 and arranging the result to resemble a valid UUIDv4.
+
+
+# The data-forms (XEP-0004) query language extension
+To query fields etc. of a XEP-0004 data-form, the last path segment of an XML query can contain a data-forms subquery.
+
+[...]
