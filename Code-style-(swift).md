@@ -20,7 +20,7 @@ switch([...]) {
 }
 ```
 
-## Vars (camelCase)
+## Vars and Constants (camelCase)
 ```swift
 var varName: TypeName
 let varName: TypeName
@@ -29,11 +29,15 @@ var varName = [...]
 let varName = [...]
 ```
 
-## Constants (always shared with objc and imported in SwiftHelpers.swift)
-```swift
-let kAppGroup = HelperTools.getObjcDefinedValue(.kAppGroup)
+## Global Constants (always defined within ObjC and imported into Swift by SwiftHelpers.swift)
+Please define the values in `MLConstants.h` and share them with Swift by updating the `MLDefinedIdentifier` `enum` in `HelperTools.h` and modifying the `getObjcDefinedValue:` in `HelperTools.m`
+```objc
+typedef NS_ENUM(NSUInteger, MLDefinedIdentifier) {
+[...]
+    MLDefinedIdentifier_kAppGroup,
+[...]
+};
 ```
-Please define the values in MLConstants.h and share them with swift by updating the `MLDefinedIdentifier` enum in HelperTools.h and modifying the `getObjcDefinedValue:` in HelperTools.m
 ```objc
 +(id) getObjcDefinedValue:(MLDefinedIdentifier) identifier
 {
@@ -42,13 +46,9 @@ Please define the values in MLConstants.h and share them with swift by updating 
 [...]
 }
 ```
-
-```objc
-typedef NS_ENUM(NSUInteger, MLDefinedIdentifier) {
-[...]
-    MLDefinedIdentifier_kAppGroup,
-[...]
-};
+Then import them into Swift-land inside `SwiftHelpers.swift`
+```swift
+let kAppGroup = HelperTools.getObjcDefinedValue(.kAppGroup)
 ```
 
 ## Array/Dictionary literals
