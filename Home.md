@@ -27,4 +27,5 @@
 - [Monal Crash Analyzer](Crash-Analyzer)
 
 ## WIP
-- [App Store Privacy Labels: Collection and usage of data in Monal](App-Store-Privacy-Labels)
+
+---
