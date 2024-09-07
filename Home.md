@@ -16,8 +16,6 @@
 
 ## Contributing and Debugging
 
-- [GSOC 2024 Guidline](GSOC-2024-Guidline)
-
 - [Building Monal](Building-Monal)
 
 - [Monal Coding Style](Code-style), please stick to it <3
