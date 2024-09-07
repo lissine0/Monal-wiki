@@ -80,25 +80,25 @@ This will return the text contents of the selected XML node as `NSString`, use a
 - `$`:
 This will return the element name of the selected XML node as `NSString`. This is only really useful if the last path segment contained a wildcard element name or its element name was negated. A Conversion command can be used to convert the returned element name to other data types as well.
 
-For data form subqueries, the the corresponding section below.
+For data-form (XEP-0004) subqueries, see the corresponding section below.
 
 ## Conversion Commands
-Conversion commands can be used to convert the returned `NSString` of an extraction command to some other data type. Conversion commands can not be used without an extraction command!
+Conversion commands can be used to convert the returned `NSString` of an extraction command to some other data type. Conversion commands can not be used without an extraction command and must be separated from the preceeding extraction command by a `|`.
 The following conversions are currently defined:
 
-- `bool`:
+- `bool`:  
 This will convert the extracted `NSString` to an `NSNumber` representing a `BOOL`. `true`/`1` becomes `@YES` and `false`/`0` becomes `@NO`. This is in accordance to the representation of truth values in XMPP.
-- `int`:
+- `int`:  
 This will convert the extracted `NSString` to an `NSNumber` representing a `NSInteger` (`integerValue` attribute).
-- `uint`:
+- `uint`:  
 This will convert the extracted `NSString` to an `NSNumber` representing a `NSUInteger` (`unsignedIntegerValue` attribute).
-- `double`:
+- `double`:  
 This will convert the extracted `NSString` to an `NSNumber` representing a `double` (`doubleValue` attribute).
-- `datetime`:
+- `datetime`:  
 This will use the `HelperTools` method `parseDateTimeString:` to parse the given `NSString` into an `NSDate` object.
-- `base64`:
+- `base64`:  
 This will use the `HelperTools` method `dataWithBase64EncodedString:` to parse the given `NSString` into an `NSData` object.
-- `uuid`:
+- `uuid`:  
 This will try to parse the given `NSString` into an `NSUUID` object using the `initWithUUIDString` initializer of `NSUUID`. This will return `nil` for an invalid string, which will omit this result from the `NSArray` returned by `find:`.
-- `uuidcast`:
+- `uuidcast`:  
 This will do the same as the `uuid` conversion command for valid uuid strings, but use the `HelperTools`method `stringToUUID` to cast any other given string to a UUIDv4 by hashing it using SHA256 and arranging the result to resemble a valid UUIDv4.
