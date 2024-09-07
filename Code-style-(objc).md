@@ -38,15 +38,18 @@ Type* varName;
 
 
 ## Functions
+Use proper sounding names (should sound like a sentence with a lot of `and` and some `with` or `having`.
+To rename functions for swift export, use `NS_SWIFT_NAME`
 ```objc
 -(NSNumber*) functionNameWithName1:(ParamType1) varName1 andName2:(ParamTypeWithPtr*) varName2
 {
 }
+
+//this would be named isContactBlacklisted(forEncryption:) in Swift-land if we did not use NS_SWIFT_NAME to rename it
++(BOOL) isContactBlacklistedForEncryption:(MLContact*) contact NS_SWIFT_NAME(isContactBlacklistedForEncryption(_:));
 ```
 
-<!---
-## Translations (future)
+## Translations
 ```objc
-NSLocalizedString(@"UNIQUE_STRING_THAT_IDENTIFIES_THIS_STRING", @"a note for our translators");
+NSLocalizedString(@"Some text that should be translated", @"a note for our translators");
 ```
--->
