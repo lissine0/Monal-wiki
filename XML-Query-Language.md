@@ -68,5 +68,37 @@ Example:
 <outerWrapper xmlns="
 ```
 
+## Extraction Commands
+An extraction command can be appended to the last path segment. Without those extraction commands, `find:` will return the full `MLXMLNode` matching the selection criteria of the XML query. If you rather want to read a special attribute, element value etc. of the full XML node, you'll have to use one of these extractions commands:
 
+- `@attributeName`:  
+This will return the value of the attribute named after the `@` as `NSString`, use a conversion command to convert the value to other data types.
+- `@@`:
+This will return all attributes of the selected XML node as key-value-pairs of an `NSDictionary`.
+- `#`:
+This will return the text contents of the selected XML node as `NSString`, use a conversion command to convert the value to other data types.
+- `$`:
+This will return the element name of the selected XML node as `NSString`. This is only really useful if the last path segment contained a wildcard element name or its element name was negated. A Conversion command can be used to convert the returned element name to other data types as well.
 
+For data form subqueries, the the corresponding section below.
+
+## Conversion Commands
+Conversion commands can be used to convert the returned `NSString` of an extraction command to some other data type. Conversion commands can not be used without an extraction command!
+The following conversions are currently defined:
+
+- `bool`:
+This will convert the extracted `NSString` to an `NSNumber` representing a `BOOL`. `true`/`1` becomes `@YES` and `false`/`0` becomes `@NO`. This is in accordance to the representation of truth values in XMPP.
+- `int`:
+This will convert the extracted `NSString` to an `NSNumber` representing a `NSInteger` (`integerValue` attribute).
+- `uint`:
+This will convert the extracted `NSString` to an `NSNumber` representing a `NSUInteger` (`unsignedIntegerValue` attribute).
+- `double`:
+This will convert the extracted `NSString` to an `NSNumber` representing a `double` (`doubleValue` attribute).
+- `datetime`:
+This will use the `HelperTools` method `parseDateTimeString:` to parse the given `NSString` into an `NSDate` object.
+- `base64`:
+This will use the `HelperTools` method `dataWithBase64EncodedString:` to parse the given `NSString` into an `NSData` object.
+- `uuid`:
+This will try to parse the given `NSString` into an `NSUUID` object using the `initWithUUIDString` initializer of `NSUUID`. This will return `nil` for an invalid string, which will omit this result from the `NSArray` returned by `find:`.
+- `uuidcast`:
+This will do the same as the `uuid` conversion command for valid uuid strings, but use the `HelperTools`method `stringToUUID` to cast any other given string to a UUIDv4 by hashing it using SHA256 and arranging the result to resemble a valid UUIDv4.
