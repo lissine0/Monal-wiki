@@ -22,6 +22,8 @@
 
 - Monal internals - [The Handler Framework](Handler-Framework)
 
+- Monal internals - [The XML Query Language](XML-Query-Language)
+
 - [Export, stream and analyze logfiles](Introduction-to-Monal-Logging)
 
 - [Monal Crash Analyzer](Crash-Analyzer)
