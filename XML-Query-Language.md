@@ -40,3 +40,8 @@ All XML queries are implemented as an interface of `MLXMLNode` as well. For XML 
 
 `find:` will return an `NSArray` listing all results matching your query, `findFirst:` will only return the first result of your query. This should be used, if you are certain that there should only be one element matching (or none at all). `check:` can be used to determine if `find:` would return an empty `NSArray`.
 
+All three methods take a string argument possibly containing `printf` style format specifiers including the `%@` specifier as supported by `NSString.stringWithFormat:` and a variable argument list for providing these format specifiers.
+
+## The Query Language
+
+
