@@ -30,7 +30,7 @@ MLXMLNode* exampleNode = [[MLXMLNode alloc] initWithElement:@"credentials" andNa
 ] andData:nil]
 ```
 
-### Querying an (possibly nested) `MLXMLNode`
+### Querying a (possibly nested) `MLXMLNode`
 All XML queries are implemented as an interface of `MLXMLNode` as well. For XML queries this class has three different methods:
 ```objc
 -(NSArray*) find:(NSString* _Nonnull) queryString, ... NS_FORMAT_FUNCTION(1, 2)
@@ -43,5 +43,18 @@ All XML queries are implemented as an interface of `MLXMLNode` as well. For XML 
 All three methods take a string argument possibly containing `printf` style format specifiers including the `%@` specifier as supported by `NSString.stringWithFormat:` and a variable argument list for providing these format specifiers.
 
 ## The Query Language
+The query language consists of a `path` followed by an optional `extraction command` and `conversion command` and is parsed by complex regular expressions in `MLXMLNode.m`. These regular expressions and the usage of the xml language throughout Monal were [security audited in 2024](https://monal-im.org/post/00011-security-audit-1/). If the following description talks about the `find:` method, the `findFirst:` and `check:` methods are automatically included.
+
+The path is built of `/`-separated segments each representing an element, selected by either an XML namespace or an element name or both. The XML namespace is wrapped in `{ }` and prefixes the element name. 
+Each path segment is used to filter for all XML nodes matching the criteria listed in this path segment.
+The special wildcard value `*` for element name or namespace mean "any namespace" or "any element".
+
+If the namespace is omitted, the namespace of the parent node in the XML tree the query is acted upon is used (or `* `, if there is no parent node). The parent node is used even if the `find:` method is executed on a child element, see _example 1_.
+The element name can not be omitted and should be set to `*` if unknown.
+
+If you want to select all elements **not** having a specified name, you'll have to prefix the element name with `!`. This will negate the selection, e.g. `!text` will select all xml nodes not named `text`, see _example 2_.
+
+If the path begins with a '/' that means the following first path segment should be used to filter the node the `find:` method is called upon, if the leading `/` is omitted, the first path segment is used to filter the **child nodes** the of the node the `find:`method is called upon.
+
 
 
