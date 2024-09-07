@@ -18,9 +18,9 @@
 
 - [Building Monal](Building-Monal)
 
-- [Monal Coding Style ObjC](Code-style), please stick to it <3
+- [Monal Coding Style ObjC](Code-style-(objc)), please stick to it <3
 
-- [Monal Coding Style Swift](Code-style), please stick to it <3
+- [Monal Coding Style Swift](Code-style-(swift)), please stick to it <3
 
 - Monal internals - [The Handler Framework](Handler-Framework)
 
