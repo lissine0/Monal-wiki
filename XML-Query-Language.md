@@ -88,10 +88,10 @@ To select XML nodes on the basis of their XML attributes, but using a regular ex
 MLXMLNode* streamError = <the stanza above as MLXMLNode tree>;
 NSString* errorReason = [streamError findFirst:@"{urn:ietf:params:xml:ns:xmpp-streams}!text$"];
 
-MLAssert([errorReason isEqualToString:@"not-well-formed", @"The extracted error should be 'not-well-formed'!");
+MLAssert([errorReason isEqualToString:@"not-well-formed"], @"The extracted error should be 'not-well-formed'!");
 ```
 
-**Example 3:**
+**Example 3 (also using an extraction command, see below):**
 ```xml
 <iq id='605818D4-4D16-4ACC-B003-BFA3E11849E1' to='user@example.com/Monal-iOS.15e153a8' xmlns='jabber:client' type='result' from='asdkjfhskdf@messaging.one'>
     <pubsub xmlns='http://jabber.org/protocol/pubsub'>
@@ -103,7 +103,7 @@ MLAssert([errorReason isEqualToString:@"not-well-formed", @"The extracted error 
 MLXMLNode* iq = <the stanza above as MLXMLNode tree>;
 NSString* subscriptionStatus = [iq findFirst:@"/<type=result>/{http://jabber.org/protocol/pubsub}pubsub/subscription<node=%@><jid=%@>@subscription", @"eu.siacs.conversations.axolotl.devicelist", @"user@example.com"];
 
-MLAssert([subscriptionStatus isEqualToString:@"subscribed", @"The extracted value of the subscription attribute should be 'subscribed'!");
+MLAssert([subscriptionStatus isEqualToString:@"subscribed"], @"The extracted value of the subscription attribute should be 'subscribed'!");
 ```
 
 ## Extraction Commands
@@ -141,8 +141,84 @@ This will try to parse the given `NSString` into an `NSUUID` object using the `i
 - `uuidcast`:  
 This will do the same as the `uuid` conversion command for valid uuid strings, but use the `HelperTools`method `stringToUUID` to cast any other given string to a UUIDv4 by hashing it using SHA256 and arranging the result to resemble a valid UUIDv4.
 
+**Example 4 (attribute extraction command together with a bool conversion command):**
+```xml
+<iq type='result' id='juliet1'>
+  <fin xmlns='urn:xmpp:mam:2' complete='true'>
+    <set xmlns='http://jabber.org/protocol/rsm'>
+      <first index='0'>28482-98726-73623</first>
+      <last>09af3-cc343-b409f</last>
+    </set>
+  </fin>
+</iq>
+```
+```objc
+MLXMLNode* iqNode = <the stanza above as MLXMLNode tree>;
+if([[iqNode findFirst:@"{urn:xmpp:mam:2}fin@complete|bool"] boolValue])
+    DDLogInfo(@"Mam query finished")
+```
+
+**Example 5:**
+```xml
+<message from='romeo@montague.net/orchard' to='juliet@capulet.com' type='chat'>
+    <body>O blessed, blessed night! I am afeard.</body>
+    <delay xmlns='urn:xmpp:delay' from='capulet.com' stamp='2002-09-10T23:08:25Z'/>
+</message>
+```
+```objc
+MLXMLNode* messageNode = <the stanza above as MLXMLNode tree>;
+NSDate* delayStamp = [messageNode findFirst:@"{urn:xmpp:delay}delay@stamp|datetime"];
+
+MLAssert(delayStamp.timeIntervalSince1970 == 1031699305, @The delay stamp should be 1031699305 seconds after the epoch!");
+```
 
 # The data-forms (XEP-0004) query language extension
 To query fields etc. of a XEP-0004 data-form, the last path segment of an XML query can contain a data-forms subquery.
+These parser for these subqueries is an `MLXMLNode` extension implemented in `XMPPDataForm.m` and glued into `MLXMLNode.m` as an extraction command `\` (backslash). This extraction command is also special and has to be terminated by a `\`. _Note:_ since our query is a string, double backslashes have to be used because of escaping (`\\`).
 
-[...]
+As extraction commands, these subqueries must be in the last path segment. Naming the element name and namespace of the node this extraction command is applied to, is optional and automatically defaults to name `x` and namespace `jabber:x:data` as defined by XEP-0004.
+
+This query language extension has its own small query language tailored to data-forms implemented in `-(id _Nullable) processDataFormQuery:(NSString*) query;`.
+To ease its use, this language reuses some constructs of the main query language, but gives them a new meaning:
+
+- **"Namespace" and "element name":**  
+The subquery can begin with something looking like a namespace and element name (both optional) like so: `{http://jabber.org/protocol/muc#roominfo}result`. The "element name" is used to select data forms with this form-type (`result` in this case). The "namespace" is used to select data-forms with a form field (usually of type hidden) with name `FORM_TYPE` having this value, see _example 6_. The special form-type `*` and `FORM_TYPE` value `*` can be used to denote "any form-type" and "any FORM_TYPE field value".
+- **Item index:**  
+This is something not present in the main query language. Between the form-type (the "element name", see above) and the "extraction command" (see below) an index in square brackets is allowed (`[0]`). Full data-form query example using an index: `\\result[0]@expire\\` or `\\[0]@expire\\`. An index is only allowed for data-forms having multiple item elements encapsulating the form fields, see [example 8 of XEP-0004](https://xmpp.org/extensions/xep-0004.html#example-8). If the index is out of bounds (e.g. greater than the count of `<item/>` XML nodes, the data-form query will return nil, which will be omitted from the resultin `NSArray` by the `MLXMLNode` implementation of `find:` (`findFirst:` will return nil, and _check:_ will return NO).
+- **Extraction command:**  
+Data-Form subqueries have only two extraction commands: `@fieldName` and `%fieldName`. `@` is used to extract the value of that field, while `%` returns an `NSDictionary` describing that field, like returned with the `-(NSDictionary* _Nullable) getField:(NSString* _Nonnull) name;` method of `XMPPDataForm`. 
+
+_Note:_ An `@` extraction command can be used together with a conversion command, see see _example 6_. Conversion commands are not allowed for `%` extraction commands or data-form queries not using an extraction command at all (e.g. returning the whole data-form).
+
+**Example 6:**
+```xml
+<iq from='upload.montague.tld' id='step_02' to='romeo@montague.tld/garden' type='result'>
+  <query xmlns='http://jabber.org/protocol/disco#info'>
+    <identity category='store' type='file' name='HTTP File Upload' />
+    <feature var='urn:xmpp:http:upload:0' />
+    <x type='result' xmlns='jabber:x:data'>
+      <field var='FORM_TYPE' type='hidden'>
+        <value>urn:xmpp:http:upload:0</value>
+      </field>
+      <field var='max-file-size'>
+        <value>5242880</value>
+      </field>
+    </x>
+  </query>
+</iq>
+```
+```objc
+MLXMLNode* iqNode = <the stanza above as MLXMLNode tree>;
+NSInteger uploadSize = [[iqNode findFirst:@"{http://jabber.org/protocol/disco#info}query/\\{urn:xmpp:http:upload:0}result@max-file-size\\|int"] integerValue];
+
+MLAssert(uploadSize == 5242880, @"Extracted upload size should be 5242880 bytes!");
+```
+
+**Some more data-form queries as found in our codebase:**
+`{http://jabber.org/protocol/disco#info}query/\\{http://jabber.org/protocol/muc#roominfo}result@muc#roomconfig_roomname\\`  
+`{http://jabber.org/protocol/commands}command<node=urn:xmpp:invite#invite>/\\[0]@expire\\|datetime` (the form-type and FORM_TYPE was omitted)  
+`{http://jabber.org/protocol/commands}command<node=urn:xmpp:invite#invite>/\\@expire\\|datetime` (the form-type and FORM_TYPE was omitted)
+
+
+- shortcut for /@@ etc (no namespace and no name, auto *)
+- /../ path segment
