@@ -54,9 +54,9 @@ The special wildcard value `*` for element name or namespace mean "any namespace
 
 If the namespace is omitted, the namespace of the parent node in the XML tree the query is acted upon is used (or `* `, if there is no parent node), see _example 0_. The namespace of the parent node is used even if the `find:` method is executed on a child XML node, see _example 1_. The element name can not be omitted and should be set to `*` if unknown.
 
-A path beginning with a `/` is named a `rooted query`. That means the following first path segment is to be used to select the node the `find:` method is called on, if the leading `/` is omitted, the first path segment is used to select the **child nodes** the of the node the `find:` method is called on.
+A path beginning with a `/` is called a `rooted query`. That means the following first path segment is to be used to select the node the `find:` method is called on, if the leading `/` is omitted, the first path segment is used to select the **child nodes** of the node the `find:` method is called on.
 
-**_Note:_** If using such a `rooted query` to access attributes, element names etc. of the XML node the whole query is acting upon, both the element name and namespace can be fully omitted and are automatically replaced by `{*}*`. This allows us to write queries like `[parsedStanza findFirst:@"/@h|int"]` or `[conference findFirst:@"/@autojoin|bool"]`.
+**_Note:_** If using such a `rooted query` to access attributes, element names etc. of the XML node the whole query is acting upon, both the element name and namespace can be fully omitted and are automatically replaced by `{*}*`. This allows us to write queries like `/@h|int"` or `/@autojoin|bool`.
 
 The special path segment with element name `..` not naming any namespace or other selection criteria (e.g. `/../`) will ascend one node in the XML node tree to the parent of the XML node that the query reached and apply the remaining query to this XML node. Thus using `/{jabber:client}iq/{http://jabber.org/protocol/pubsub}pubsub/items/../../../@type` will return the value of the type attribute on the root element (the `{jabber:iq}iq`).
 
@@ -95,9 +95,9 @@ MLAssert([messageId isEqualToString:@"some_id", @"The extracted message id shoul
 - **Not element name:**  
 If you want to select all XML nodes **not** having a specified name, you'll have to prefix the element name with `!`. This will negate the selection, e.g. `!text` will select all XML nodes **not** named `text`, see _example 2_.
 - **Element attribute equals value**:  
-If you want to select XML nodes on the basis of their XML attributes, you can list those attributes as `attributeName=value`pairs each inside `< >`, see _example 3_. You can use format string specifiers in the value part of those pairs to replace those with the variadic arguments of `find:`. The order of variadic arguments has to resemble _all_ format specifiers of the complete query string given to `find:` Note: the value part of those pairs can not be omitted, use regular expression matching to select for mere XML attribute presence (e.g. `<attributeName~^.*$>`).
+If you want to select XML nodes on the basis of their XML attributes, you can list those attributes as `attributeName=value` pairs each inside `< >`, see _example 3_. You can use format string specifiers in the value part of those pairs to replace those with the variadic arguments of `find:`. The order of variadic arguments has to resemble _all_ format specifiers of the complete query string given to `find:` Note: the value part of those pairs can not be omitted, use regular expression matching to select for mere XML attribute presence (e.g. `<attributeName~^.*$>`).
 - **Element attribute matches regular expression**:  
-To select XML nodes on the basis of their XML attributes, but using a regular expression, you'll have to use `attributeName~regex` pairs inside `< >`. No format string specifiers will be repaced inside your regular expression following the `~`. You'll have to use `^` and `$` to match begin and end of the attribute string yourself, e.g. `<attributeName~.>` will match all attribute values having **at least** one character, while `<attributeName~^.$>` will match all attribute values having **exactly** one character.
+To select XML nodes on the basis of their XML attributes, but using a regular expression, you'll have to use `attributeName~regex` pairs inside `< >`. No format string specifiers will be replaced inside your regular expression following the `~`. You'll have to use `^` and `$` to match begin and end of the attribute value yourself, e.g. `<attributeName~.>` will match all attribute values having **at least** one character, while `<attributeName~^.$>` will match all attribute values having **exactly** one character.
 
 **Example 2:**
 ```xml
@@ -193,6 +193,12 @@ NSDate* delayStamp = [messageNode findFirst:@"{urn:xmpp:delay}delay@stamp|dateti
 MLAssert(delayStamp.timeIntervalSince1970 == 1031699305, @The delay stamp should be 1031699305 seconds after the epoch!");
 ```
 
+**Some more queries as found in our codebase:**  
+`{urn:xmpp:jingle:1}jingle<action~^session-(initiate|accept)$>`  
+`error/{urn:ietf:params:xml:ns:xmpp-stanzas}item-not-found`  
+`{urn:xmpp:avatar:metadata}metadata/info`  
+`{urn:xmpp:avatar:data}data#|base64`  
+
 # The data-forms (XEP-0004) query language extension
 To query fields etc. of a XEP-0004 data-form, the last path segment of an XML query can contain a data-forms subquery.
 These parser for these subqueries is an `MLXMLNode` extension implemented in `XMPPDataForm.m` and glued into `MLXMLNode.m` as an extraction command `\` (backslash). This extraction command is also special and has to be terminated by a `\`.
@@ -237,7 +243,7 @@ NSInteger uploadSize = [[iqNode findFirst:@"{http://jabber.org/protocol/disco#in
 MLAssert(uploadSize == 5242880, @"Extracted upload size should be 5242880 bytes!");
 ```
 
-**Some more data-form queries as found in our codebase:**
+**Some more data-form queries as found in our codebase:**  
 `{http://jabber.org/protocol/disco#info}query/\\{http://jabber.org/protocol/muc#roominfo}result@muc#roomconfig_roomname\\`  
 `{http://jabber.org/protocol/commands}command<node=urn:xmpp:invite#invite>/\\[0]@expire\\|datetime` (the form-type and FORM_TYPE was omitted)  
 `{http://jabber.org/protocol/commands}command<node=urn:xmpp:invite#invite>/\\@expire\\|datetime` (the form-type and FORM_TYPE was omitted)
