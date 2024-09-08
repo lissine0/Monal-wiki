@@ -133,13 +133,13 @@ An extraction command can be appended to the last path segment. Without those ex
 - `@attributeName`:  
 This will return the value of the attribute named after the `@` as `NSString`, use a conversion command to convert the value to other data types.
 - `@@`:
-This will return all attributes of the selected XML node as key-value-pairs of an `NSDictionary`.
+This will return all attributes of the selected XML node as key-value-pairs in an `NSDictionary`. No conversion commands can be used together with this extraction command.
 - `#`:
 This will return the text contents of the selected XML node as `NSString`, use a conversion command to convert the value to other data types.
 - `$`:
 This will return the element name of the selected XML node as `NSString`. This is only really useful if the last path segment contained a wildcard element name or its element name was negated. A Conversion command can be used to convert the returned element name to other data types as well.
 
-For data-form (XEP-0004) subqueries, see the corresponding section below.
+For data-form ([XEP-0004](https://xmpp.org/extensions/xep-0004.html)) subqueries, see the corresponding section below.
 
 ## Conversion Commands
 Conversion commands can be used to convert the returned `NSString` of an extraction command to some other data type. Conversion commands can not be used without an extraction command and must be separated from the preceeding extraction command by a pipe symbol (`|`).
@@ -148,17 +148,17 @@ The following conversions are currently defined:
 - `bool`:  
 This will convert the extracted `NSString` to an `NSNumber` representing a `BOOL`. `true`/`1` becomes `@YES` and `false`/`0` becomes `@NO`. This is in accordance to the representation of truth values in XMPP.
 - `int`:  
-This will convert the extracted `NSString` to an `NSNumber` representing a `NSInteger` (`integerValue` attribute).
+This will convert the extracted `NSString` to an `NSNumber` representing a `NSInteger` (`integerValue` property).
 - `uint`:  
-This will convert the extracted `NSString` to an `NSNumber` representing a `NSUInteger` (`unsignedIntegerValue` attribute).
+This will convert the extracted `NSString` to an `NSNumber` representing a `NSUInteger` (`unsignedIntegerValue` property).
 - `double`:  
-This will convert the extracted `NSString` to an `NSNumber` representing a `double` (`doubleValue` attribute).
+This will convert the extracted `NSString` to an `NSNumber` representing a `double` (`doubleValue` property).
 - `datetime`:  
 This will use the `HelperTools` method `parseDateTimeString:` to parse the given `NSString` into an `NSDate` object.
 - `base64`:  
 This will use the `HelperTools` method `dataWithBase64EncodedString:` to parse the given `NSString` into an `NSData` object.
 - `uuid`:  
-This will try to parse the given `NSString` into an `NSUUID` object using the `initWithUUIDString` initializer of `NSUUID`. This will return `nil` for an invalid string, which will omit this result from the `NSArray` returned by `find:`.
+This will try to parse the given `NSString` into an `NSUUID` object using the `initWithUUIDString` initializer of `NSUUID`. This will return `nil` for an invalid string, which will omit this result from the `NSArray` returned by `find:` (`findFirst:` will return nil, and `check:` will return NO).
 - `uuidcast`:  
 This will do the same as the `uuid` conversion command for valid uuid strings, but use the `HelperTools`method `stringToUUID` to cast any other given string to a UUIDv4 by hashing it using SHA256 and arranging the result to resemble a valid UUIDv4.
 
@@ -193,11 +193,11 @@ NSDate* delayStamp = [messageNode findFirst:@"{urn:xmpp:delay}delay@stamp|dateti
 MLAssert(delayStamp.timeIntervalSince1970 == 1031699305, @The delay stamp should be 1031699305 seconds after the epoch!");
 ```
 
-**Some more queries as found in our codebase:**  
-`{urn:xmpp:jingle:1}jingle<action~^session-(initiate|accept)$>`  
-`error/{urn:ietf:params:xml:ns:xmpp-stanzas}item-not-found`  
-`{urn:xmpp:avatar:metadata}metadata/info`  
-`{urn:xmpp:avatar:data}data#|base64`  
+**Some more queries as found in our codebase:**
+- `{urn:xmpp:jingle:1}jingle<action~^session-(initiate|accept)$>`
+- `error/{urn:ietf:params:xml:ns:xmpp-stanzas}item-not-found`
+- `{urn:xmpp:avatar:metadata}metadata/info`
+- `{urn:xmpp:avatar:data}data#|base64`
 
 # The data-forms (XEP-0004) query language extension
 To query fields etc. of a XEP-0004 data-form, the last path segment of an XML query can contain a data-forms subquery.
@@ -213,7 +213,7 @@ To ease its use, this language reuses some constructs of the main query language
 - **"Namespace" and "element name":**  
 The subquery can begin with something looking like a namespace and element name (both optional) like so: `{http://jabber.org/protocol/muc#roominfo}result`. The "element name" is used to select data forms with this form-type (`result` in this case). The "namespace" is used to select data-forms with a form field (usually of type hidden) with name `FORM_TYPE` having this value, see _example 6_. The special form-type `*` and `FORM_TYPE` value `*` can be used to denote "any form-type" and "any FORM_TYPE field value".
 - **Item index:**  
-This is something not present in the main query language. Between the form-type (the "element name", see above) and the "extraction command" (see below) an index in square brackets is allowed (`[0]`). Full data-form query example using an index: `\\result[0]@expire\\` or `\\[0]@expire\\`. An index is only allowed for data-forms having multiple item elements encapsulating the form fields, see [example 8 of XEP-0004](https://xmpp.org/extensions/xep-0004.html#example-8). If the index is out of bounds (e.g. greater than the count of `<item/>` XML nodes, the data-form query will return nil, which will be omitted from the resultin `NSArray` by the `MLXMLNode` implementation of `find:` (`findFirst:` will return nil, and _check:_ will return NO).
+This is something not present in the main query language. Between the form-type (the "element name", see above) and the "extraction command" (see below) an index in square brackets is allowed (`[0]`). Full data-form query example using an index: `\\result[0]@expire\\` or `\\[0]@expire\\`. An index is only allowed for data-forms having multiple item elements encapsulating the form fields, see [example 8 of XEP-0004](https://xmpp.org/extensions/xep-0004.html#example-8). If the index is out of bounds (e.g. greater than the count of `<item/>` XML nodes, the data-form query will return nil, which will be omitted from the resultin `NSArray` by the `MLXMLNode` implementation of `find:` (`findFirst:` will return nil, and `check:` will return NO).
 - **Extraction command:**  
 Data-Form subqueries have only two extraction commands: `@fieldName` and `%fieldName`. `@` is used to extract the value of that field, while `%` returns an `NSDictionary` describing that field, like returned with the `-(NSDictionary* _Nullable) getField:(NSString* _Nonnull) name;` method of `XMPPDataForm`. 
 
@@ -243,7 +243,7 @@ NSInteger uploadSize = [[iqNode findFirst:@"{http://jabber.org/protocol/disco#in
 MLAssert(uploadSize == 5242880, @"Extracted upload size should be 5242880 bytes!");
 ```
 
-**Some more data-form queries as found in our codebase:**  
-`{http://jabber.org/protocol/disco#info}query/\\{http://jabber.org/protocol/muc#roominfo}result@muc#roomconfig_roomname\\`  
-`{http://jabber.org/protocol/commands}command<node=urn:xmpp:invite#invite>/\\[0]@expire\\|datetime` (the form-type and FORM_TYPE was omitted)  
-`{http://jabber.org/protocol/commands}command<node=urn:xmpp:invite#invite>/\\@expire\\|datetime` (the form-type and FORM_TYPE was omitted)
+**Some more data-form queries as found in our codebase:**
+- `{http://jabber.org/protocol/disco#info}query/\\{http://jabber.org/protocol/muc#roominfo}result@muc#roomconfig_roomname\\`
+- `{http://jabber.org/protocol/commands}command<node=urn:xmpp:invite#invite>/\\[0]@expire\\|datetime` (the form-type and FORM_TYPE was omitted)
+- `{http://jabber.org/protocol/commands}command<node=urn:xmpp:invite#invite>/\\@expire\\|datetime` (the form-type and FORM_TYPE was omitted)
