@@ -82,6 +82,20 @@ return [
 ]
 ```
 
+## View modifiers
+```swift
+// indent view modifiers below the view in question (and don't put them into the same line!)
+Text("Hello World!")
+    .font(.largeTitle)
+    .foregroundColor(.primary)
+
+// don't indent when coming after a closing "}" (but still use a new line!)
+Button {
+}
+.font(.largeTitle)
+.foregroundColor(.primary)
+```
+
 ## Order of properties and methods in `structs` or `classes`
 ```swift
 struct SomeView: View {
