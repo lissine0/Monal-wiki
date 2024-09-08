@@ -40,20 +40,20 @@ All XML queries are implemented as an interface of `MLXMLNode` as well. For XML 
 
 `find:` will return an `NSArray` listing all results matching your query, `findFirst:` will only return the first result of your query (or nil if the resulting `NSArray` was empty). This should be used, if you are certain that there should only be one element matching (or none at all). `check:` can be used to determine if `find:` would return an empty `NSArray`.
 
-All three methods take a string argument possibly containing `printf`-style format specifiers including the `%@` specifier as supported by `NSString.stringWithFormat:` and a variable argument list for providing the values for these format specifiers.
+All three methods take a string argument possibly containing `printf`-style format specifiers including the `%@` specifier as supported by `NSString stringWithFormat:` and a variable argument list for providing the values for these format specifiers.
 
 # The Query Language
-The query language consists of a `path` followed by an optional `extraction command` and `conversion command` and is parsed by complex regular expressions in `MLXMLNode.m`. These regular expressions and the usage of the xml language throughout Monal were [security audited in 2024](https://monal-im.org/post/00011-security-audit-1/). If the following description talks about the `find:` method, the `findFirst:` and `check:` methods are automatically included.
+The query language consists of a `path` followed by an optional `extraction command` and `conversion command` and is parsed by complex regular expressions in `MLXMLNode.m`. These regular expressions and the usage of the xml language throughout Monal were [security audited in 2024](https://monal-im.org/post/00011-security-audit-1/). _Note:_ If the following description talks about the `find:` method, the `findFirst:` and `check:` methods are automatically included.
 
 ## Path Segments
 The path is built of `/`-separated segments each representing an XML node, selected by either an XML namespace or an element name or both. The XML namespace is wrapped in `{ }` and prefixes the element name. 
 Each path segment is used to select all XML nodes matching the criteria listed in this path segment.
 The special wildcard value `*` for element name or namespace mean "any namespace" or "any element".
 
-If the namespace is omitted, the namespace of the parent node in the XML tree the query is acted upon is used (or `* `, if there is no parent node). The namespace of the parent node is used even if the `find:` method is executed on a child XML node, see _example 1_.
+If the namespace is omitted, the namespace of the parent node in the XML tree the query is acted upon is used (or `* `, if there is no parent node). The namespace of the parent node is used even if the `find:` method is executed on a child XML node, see _example 0_.
 The element name can not be omitted and should be set to `*` if unknown.
 
-A path beginning with a `/` is named a `rooted query. That means the following first path segment is to be used to select the node the `find:` method is called upon, if the leading `/` is omitted, the first path segment is used to select the **child nodes** the of the node the `find:`method is called upon.
+A path beginning with a `/` is named a `rooted query`. That means the following first path segment is to be used to select the node the `find:` method is called upon, if the leading `/` is omitted, the first path segment is used to select the **child nodes** the of the node the `find:`method is called upon.
 _Note:_ If using such a `rooted query` is used to access attributes, element names etc. of the XML node the whole query is acting upon, both the element name and namespace can be fully omitted and are automatically replaced by `{*}*`. This allows us to write queries like `[parsedStanza findFirst:@"/@h|int"]` or `[conference findFirst:@"/@autojoin|bool"]`.
 
 The special path segment with element name `..` not naming any namespace or other selection criteria (e.g. `/../`) will ascend one node in the XML node tree to the parent of the XML node that the query reached and apply the remaining query to this XML node. Thus using `/{jabber:client}iq/{http://jabber.org/protocol/pubsub}pubsub/items/../../../@type` will return the value of the type attribute on the root element (the `{jabber:iq}iq`). This query would return  
