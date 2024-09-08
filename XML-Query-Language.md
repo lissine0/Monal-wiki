@@ -50,10 +50,25 @@ The path is built of `/`-separated segments each representing an XML node, selec
 Each path segment is used to select all XML nodes matching the criteria listed in this path segment.
 The special wildcard value `*` for element name or namespace mean "any namespace" or "any element".
 
-If the namespace is omitted, the namespace of the parent node in the XML tree the query is acted upon is used (or `* `, if there is no parent node). The parent node is used even if the `find:` method is executed on a child XML node, see _example 1_.
+If the namespace is omitted, the namespace of the parent node in the XML tree the query is acted upon is used (or `* `, if there is no parent node). The namespace of the parent node is used even if the `find:` method is executed on a child XML node, see _example 1_.
 The element name can not be omitted and should be set to `*` if unknown.
 
 If the path begins with a '/' that means the following first path segment is to be used to select the node the `find:` method is called upon, if the leading `/` is omitted, the first path segment is used to select the **child nodes** the of the node the `find:`method is called upon.
+
+**Example 1:**
+```xml
+<message from='test@example.org' id='some_id' xmlns='jabber:client'>
+    <body>Message text</body>
+    <body xmlns='urn:some:different:namespace'>This will NOT be used</body>
+</message>
+```
+```objc
+MLXMLNode* message = <the stanza above as MLXMLNode tree>;
+NSArray<NSString*>* bodyStrings = [message find:@"body#"];
+
+MLAssert(bodyStrings.count == 1, @"Only one body text should be returned!");
+MLAssert([bodyStrings[0] isEqualToString:@"Message text", @"The body with inherited namespace 'jabber:client' should be used!");
+```
 
 ### More selection criteria
 - **Not element name:**  
@@ -63,12 +78,33 @@ If you want to select XML nodes on the basis of their XML attributes, you can li
 - **Element attribute matches regular expression**:  
 To select XML nodes on the basis of their XML attributes, but using a regular expression, you'll have to use `attributeName~regex` pairs inside `< >`. No format string specifiers will be repaced inside your regular expression following the `~`. You'll have to use `^` and `$` to match begin and end of the attribute string yourself, e.g. `<attributeName~.>` will match all attribute values having **at least** one character, while `<attributeName~^.$>` will match all attribute values having **exactly** one character.
 
-Examples:
+**Example 2:**
 ```xml
-<outerWrapper xmlns="
+<stream:error>
+    <not-well-formed xmlns='urn:ietf:params:xml:ns:xmpp-streams'/>
+</stream:error>
+```
+```objc
+MLXMLNode* streamError = <the stanza above as MLXMLNode tree>;
+NSString* errorReason = [streamError findFirst:@"{urn:ietf:params:xml:ns:xmpp-streams}!text$"];
+
+MLAssert([errorReason isEqualToString:@"not-well-formed", @"The extracted error should be 'not-well-formed'!");
 ```
 
-[...]
+**Example 3:**
+```xml
+<iq id='605818D4-4D16-4ACC-B003-BFA3E11849E1' to='user@example.com/Monal-iOS.15e153a8' xmlns='jabber:client' type='result' from='asdkjfhskdf@messaging.one'>
+    <pubsub xmlns='http://jabber.org/protocol/pubsub'>
+        <subscription node='eu.siacs.conversations.axolotl.devicelist' subid='6795F13596465' subscription='subscribed' jid='user@example.com'/>
+    </pubsub>
+</iq>
+```
+```objc
+MLXMLNode* iq = <the stanza above as MLXMLNode tree>;
+NSString* subscriptionStatus = [iq findFirst:@"/<type=result>/{http://jabber.org/protocol/pubsub}pubsub/subscription<node=%@><jid=%@>@subscription", @"eu.siacs.conversations.axolotl.devicelist", @"user@example.com"];
+
+MLAssert([subscriptionStatus isEqualToString:@"subscribed", @"The extracted value of the subscription attribute should be 'subscribed'!");
+```
 
 ## Extraction Commands
 An extraction command can be appended to the last path segment. Without those extraction commands, `find:` will return the full `MLXMLNode` matching the selection criteria of the XML query. If you rather want to read a special attribute, element value etc. of the full XML node, you'll have to use one of these extractions commands:
