@@ -61,8 +61,7 @@ If the path begins with a '/' that means the following first path segment is to 
     <body>Message text</body>
     <body xmlns='urn:some:different:namespace'>This will NOT be used</body>
 </message>
-```
-```objc
+``````objc
 MLXMLNode* message = <the stanza above as MLXMLNode tree>;
 NSArray<NSString*>* bodyStrings = [message find:@"body#"];
 
