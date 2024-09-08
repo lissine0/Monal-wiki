@@ -53,7 +53,13 @@ The special wildcard value `*` for element name or namespace mean "any namespace
 If the namespace is omitted, the namespace of the parent node in the XML tree the query is acted upon is used (or `* `, if there is no parent node). The namespace of the parent node is used even if the `find:` method is executed on a child XML node, see _example 1_.
 The element name can not be omitted and should be set to `*` if unknown.
 
-If the path begins with a '/' that means the following first path segment is to be used to select the node the `find:` method is called upon, if the leading `/` is omitted, the first path segment is used to select the **child nodes** the of the node the `find:`method is called upon.
+A path beginning with a `/` is named a `rooted query. That means the following first path segment is to be used to select the node the `find:` method is called upon, if the leading `/` is omitted, the first path segment is used to select the **child nodes** the of the node the `find:`method is called upon.
+_Note:_ If using such a `rooted query` is used to access attributes, element names etc. of the XML node the whole query is acting upon, both the element name and namespace can be fully omitted and are automatically replaced by `{*}*`. This allows us to write queries like `[parsedStanza findFirst:@"/@h|int"]` or `[conference findFirst:@"/@autojoin|bool"]`.
+
+The special path segment with element name `..` not naming any namespace or other selection criteria (e.g. `/../`) will ascend one node in the XML node tree to the parent of the XML node that the query reached and apply the remaining query to this XML node. Thus using `/{jabber:client}iq/{http://jabber.org/protocol/pubsub}pubsub/items/../../../@type` will return the value of the type attribute on the root element (the `{jabber:iq}iq`). This query would return  
+
+_Note:_ Not using an extraction command (see the next chapter below) will return the matching `MLXMLNode`s as reference. Changing the attributes etc. of that reference will change the original `MLXMLNode` in the XML tree it is part of.
+If you don't want that, you'll have to call `copy` on the returned `MLXMLNode`s to decouple them from their original.
 
 **Example 1:**
 ```xml
@@ -107,7 +113,7 @@ MLAssert([subscriptionStatus isEqualToString:@"subscribed"], @"The extracted val
 ```
 
 ## Extraction Commands
-An extraction command can be appended to the last path segment. Without those extraction commands, `find:` will return the full `MLXMLNode` matching the selection criteria of the XML query. If you rather want to read a special attribute, element value etc. of the full XML node, you'll have to use one of these extractions commands:
+An extraction command can be appended to the last path segment. Without those extraction commands, `find:` will return the full `MLXMLNode` matching the selection criteria of the XML query. If you rather want to read a special attribute, element value etc. of the full XML node, you'll have to use one of the extractions commands below
 
 - `@attributeName`:  
 This will return the value of the attribute named after the `@` as `NSString`, use a conversion command to convert the value to other data types.
@@ -141,7 +147,7 @@ This will try to parse the given `NSString` into an `NSUUID` object using the `i
 - `uuidcast`:  
 This will do the same as the `uuid` conversion command for valid uuid strings, but use the `HelperTools`method `stringToUUID` to cast any other given string to a UUIDv4 by hashing it using SHA256 and arranging the result to resemble a valid UUIDv4.
 
-**Example 4 (attribute extraction command together with a bool conversion command):**
+**Example 4 (attribute extraction command together with a `bool` conversion command):**
 ```xml
 <iq type='result' id='juliet1'>
   <fin xmlns='urn:xmpp:mam:2' complete='true'>
@@ -158,7 +164,7 @@ if([[iqNode findFirst:@"{urn:xmpp:mam:2}fin@complete|bool"] boolValue])
     DDLogInfo(@"Mam query finished")
 ```
 
-**Example 5:**
+**Example 5 (attribute extraction command together with a `datetime` conversion command):**
 ```xml
 <message from='romeo@montague.net/orchard' to='juliet@capulet.com' type='chat'>
     <body>O blessed, blessed night! I am afeard.</body>
@@ -218,7 +224,3 @@ MLAssert(uploadSize == 5242880, @"Extracted upload size should be 5242880 bytes!
 `{http://jabber.org/protocol/disco#info}query/\\{http://jabber.org/protocol/muc#roominfo}result@muc#roomconfig_roomname\\`  
 `{http://jabber.org/protocol/commands}command<node=urn:xmpp:invite#invite>/\\[0]@expire\\|datetime` (the form-type and FORM_TYPE was omitted)  
 `{http://jabber.org/protocol/commands}command<node=urn:xmpp:invite#invite>/\\@expire\\|datetime` (the form-type and FORM_TYPE was omitted)
-
-
-- shortcut for /@@ etc (no namespace and no name, auto *)
-- /../ path segment
