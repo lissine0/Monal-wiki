@@ -1,11 +1,26 @@
 ## Tabs vs. Spaces
 We currently use 4 spaces. Trailing whitespaces should be avoided.
+
 ## if/else
+Don't use parentheses around the if condition like you would in ObjC. Parentheses are okay if you use them to make multi-line conditions more readable.
 ```swift
-if [...] {
-} else if [...] {
+if true == true or false == false {
+} else if (
+    some == other or
+    true == false or
+    isThisTrue()
+) {
 } else {
 }
+```
+
+## Guard statements
+Use a guard statement instead of if/else to handle errors and/or not increase the indentation level
+```swift
+guard let result = somethingThatCouldBeNil() else {
+    return
+}
+print(result)
 ```
 
 ## Switch
