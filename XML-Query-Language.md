@@ -50,8 +50,7 @@ The path is built of `/`-separated segments each representing an XML node, selec
 Each path segment is used to select all XML nodes matching the criteria listed in this path segment.
 The special wildcard value `*` for element name or namespace mean "any namespace" or "any element".
 
-If the namespace is omitted, the namespace of the parent node in the XML tree the query is acted upon is used (or `* `, if there is no parent node). The namespace of the parent node is used even if the `find:` method is executed on a child XML node, see _example 0_.
-The element name can not be omitted and should be set to `*` if unknown.
+If the namespace is omitted, the namespace of the parent node in the XML tree the query is acted upon is used (or `* `, if there is no parent node), see _example 0_. The namespace of the parent node is used even if the `find:` method is executed on a child XML node, see _example 1_. The element name can not be omitted and should be set to `*` if unknown.
 
 A path beginning with a `/` is named a `rooted query`. That means the following first path segment is to be used to select the node the `find:` method is called on, if the leading `/` is omitted, the first path segment is used to select the **child nodes** the of the node the `find:` method is called on.
 **_Note:_** If using such a `rooted query` to access attributes, element names etc. of the XML node the whole query is acting upon, both the element name and namespace can be fully omitted and are automatically replaced by `{*}*`. This allows us to write queries like `[parsedStanza findFirst:@"/@h|int"]` or `[conference findFirst:@"/@autojoin|bool"]`.
@@ -61,7 +60,7 @@ The special path segment with element name `..` not naming any namespace or othe
 **_Note:_** Not using an extraction command (see the next chapter below) will return the matching `MLXMLNode`s _as reference_. Changing the attributes etc. of that reference will change the original `MLXMLNode` in the XML tree it is part of.
 If you don't want that, you'll have to call `copy` on the returned `MLXMLNode`s to decouple them from their original.
 
-**Example 1:**
+**Example 0:**
 ```xml
 <message from='test@example.org' id='some_id' xmlns='jabber:client'>
     <body>Message text</body>
@@ -74,6 +73,19 @@ NSArray<NSString*>* bodyStrings = [message find:@"body#"];
 
 MLAssert(bodyStrings.count == 1, @"Only one body text should be returned!");
 MLAssert([bodyStrings[0] isEqualToString:@"Message text", @"The body with inherited namespace 'jabber:client' should be used!");
+```
+
+**Example 1:**
+```xml
+<message from='test@example.org' id='some_id' xmlns='jabber:client'>
+    <body>Message text</body>
+</message>
+```
+```objc
+MLXMLNode* message = <the stanza above as MLXMLNode tree>;
+NSString* messageId = [message findFirst:@"/@id"];
+
+MLAssert([messageId isEqualToString:@"some_id", @"The extracted message id should be 'some_id'!");
 ```
 
 ### More selection criteria
