@@ -135,6 +135,12 @@ struct SomeView: View {
         // do it now!
     }
 
+    // then all views (@ViewBuilder or not)
+    @ViewBuilder
+    var avatarView: some View {
+        Text("World, Hello!")
+    }
+
     // and last but not least the body of our view (if we are writing a View at all, of course)
     var body: some View {
         Text("Hello World!")
