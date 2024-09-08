@@ -43,7 +43,7 @@ All XML queries are implemented as an interface of `MLXMLNode` as well. For XML 
 All three methods take a string argument possibly containing `printf`-style format specifiers including the `%@` specifier as supported by `NSString stringWithFormat:` and a variable argument list for providing the values for these format specifiers.
 
 # The Query Language
-The query language consists of a `path` followed by an optional `extraction command` and `conversion command` and is parsed by complex regular expressions in `MLXMLNode.m`. These regular expressions and the usage of the xml language throughout Monal were [security audited in 2024](https://monal-im.org/post/00011-security-audit-1/). _Note:_ If the following description talks about the `find:` method, the `findFirst:` and `check:` methods are automatically included.
+The query language consists of a `path` followed by an optional `extraction command` and `conversion command` and is parsed by complex regular expressions in `MLXMLNode.m`. These regular expressions and the usage of the xml language throughout Monal were [security audited in 2024](https://monal-im.org/post/00011-security-audit-1/). **_Note:_** If the following description talks about the `find:` method, the `findFirst:` and `check:` methods are automatically included.
 
 ## Path Segments
 The path is built of `/`-separated segments each representing an XML node, selected by either an XML namespace or an element name or both. The XML namespace is wrapped in `{ }` and prefixes the element name. 
@@ -53,12 +53,12 @@ The special wildcard value `*` for element name or namespace mean "any namespace
 If the namespace is omitted, the namespace of the parent node in the XML tree the query is acted upon is used (or `* `, if there is no parent node). The namespace of the parent node is used even if the `find:` method is executed on a child XML node, see _example 0_.
 The element name can not be omitted and should be set to `*` if unknown.
 
-A path beginning with a `/` is named a `rooted query`. That means the following first path segment is to be used to select the node the `find:` method is called upon, if the leading `/` is omitted, the first path segment is used to select the **child nodes** the of the node the `find:`method is called upon.
-_Note:_ If using such a `rooted query` is used to access attributes, element names etc. of the XML node the whole query is acting upon, both the element name and namespace can be fully omitted and are automatically replaced by `{*}*`. This allows us to write queries like `[parsedStanza findFirst:@"/@h|int"]` or `[conference findFirst:@"/@autojoin|bool"]`.
+A path beginning with a `/` is named a `rooted query`. That means the following first path segment is to be used to select the node the `find:` method is called on, if the leading `/` is omitted, the first path segment is used to select the **child nodes** the of the node the `find:` method is called on.
+**_Note:_** If using such a `rooted query` to access attributes, element names etc. of the XML node the whole query is acting upon, both the element name and namespace can be fully omitted and are automatically replaced by `{*}*`. This allows us to write queries like `[parsedStanza findFirst:@"/@h|int"]` or `[conference findFirst:@"/@autojoin|bool"]`.
 
-The special path segment with element name `..` not naming any namespace or other selection criteria (e.g. `/../`) will ascend one node in the XML node tree to the parent of the XML node that the query reached and apply the remaining query to this XML node. Thus using `/{jabber:client}iq/{http://jabber.org/protocol/pubsub}pubsub/items/../../../@type` will return the value of the type attribute on the root element (the `{jabber:iq}iq`). This query would return  
+The special path segment with element name `..` not naming any namespace or other selection criteria (e.g. `/../`) will ascend one node in the XML node tree to the parent of the XML node that the query reached and apply the remaining query to this XML node. Thus using `/{jabber:client}iq/{http://jabber.org/protocol/pubsub}pubsub/items/../../../@type` will return the value of the type attribute on the root element (the `{jabber:iq}iq`).
 
-_Note:_ Not using an extraction command (see the next chapter below) will return the matching `MLXMLNode`s as reference. Changing the attributes etc. of that reference will change the original `MLXMLNode` in the XML tree it is part of.
+**_Note:_** Not using an extraction command (see the next chapter below) will return the matching `MLXMLNode`s _as reference_. Changing the attributes etc. of that reference will change the original `MLXMLNode` in the XML tree it is part of.
 If you don't want that, you'll have to call `copy` on the returned `MLXMLNode`s to decouple them from their original.
 
 **Example 1:**
@@ -180,7 +180,7 @@ MLAssert(delayStamp.timeIntervalSince1970 == 1031699305, @The delay stamp should
 
 # The data-forms (XEP-0004) query language extension
 To query fields etc. of a XEP-0004 data-form, the last path segment of an XML query can contain a data-forms subquery.
-These parser for these subqueries is an `MLXMLNode` extension implemented in `XMPPDataForm.m` and glued into `MLXMLNode.m` as an extraction command `\` (backslash). This extraction command is also special and has to be terminated by a `\`. _Note:_ since our query is a string, double backslashes have to be used because of escaping (`\\`).
+These parser for these subqueries is an `MLXMLNode` extension implemented in `XMPPDataForm.m` and glued into `MLXMLNode.m` as an extraction command `\` (backslash). This extraction command is also special and has to be terminated by a `\`. **_Note:_** since our query is a string, double backslashes have to be used because of escaping (`\\`).
 
 As extraction commands, these subqueries must be in the last path segment. Naming the element name and namespace of the node this extraction command is applied to, is optional and automatically defaults to name `x` and namespace `jabber:x:data` as defined by XEP-0004.
 
@@ -194,7 +194,7 @@ This is something not present in the main query language. Between the form-type 
 - **Extraction command:**  
 Data-Form subqueries have only two extraction commands: `@fieldName` and `%fieldName`. `@` is used to extract the value of that field, while `%` returns an `NSDictionary` describing that field, like returned with the `-(NSDictionary* _Nullable) getField:(NSString* _Nonnull) name;` method of `XMPPDataForm`. 
 
-_Note:_ An `@` extraction command can be used together with a conversion command, see see _example 6_. Conversion commands are not allowed for `%` extraction commands or data-form queries not using an extraction command at all (e.g. returning the whole data-form).
+**_Note:_** An `@` extraction command can be used together with a conversion command, see see _example 6_. Conversion commands are not allowed for `%` extraction commands or data-form queries not using an extraction command at all (e.g. returning the whole data-form).
 
 **Example 6:**
 ```xml
