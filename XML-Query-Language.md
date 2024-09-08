@@ -85,7 +85,7 @@ This will return the element name of the selected XML node as `NSString`. This i
 For data-form (XEP-0004) subqueries, see the corresponding section below.
 
 ## Conversion Commands
-Conversion commands can be used to convert the returned `NSString` of an extraction command to some other data type. Conversion commands can not be used without an extraction command and must be separated from the preceeding extraction command by a `|`.
+Conversion commands can be used to convert the returned `NSString` of an extraction command to some other data type. Conversion commands can not be used without an extraction command and must be separated from the preceeding extraction command by a pipe symbol (`|`).
 The following conversions are currently defined:
 
 - `bool`:  
