@@ -23,7 +23,8 @@ return
 ```
 
 ## Guard statements
-Use a guard statement instead of if/else to handle errors and/or not increase the indentation level
+Use a guard statement instead of if/else to handle errors/abort conditions to not increase the indentation level
+and make clear that these are abort conditions
 ```swift
 guard let result = somethingThatCouldBeNil() else {
     return
