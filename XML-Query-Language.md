@@ -200,14 +200,14 @@ MLAssert(delayStamp.timeIntervalSince1970 == 1031699305, @The delay stamp should
 - `{urn:xmpp:avatar:data}data#|base64`
 
 # The data-forms (XEP-0004) query language extension
-To query fields etc. of a XEP-0004 data-form, the last path segment of an XML query can contain a data-forms subquery.
-These parser for these subqueries is an `MLXMLNode` extension implemented in `XMPPDataForm.m` and glued into `MLXMLNode.m` as an extraction command `\` (backslash). This extraction command is also special and has to be terminated by a `\`.
+To query fields etc. of a [XEP-0004](https://xmpp.org/extensions/xep-0004.html) data-form, the last path segment of an XML query can contain a data-forms subquery.
+Thes parser for these subqueries is an `MLXMLNode` extension implemented in `XMPPDataForm.m` and glued into `MLXMLNode.m` as the extraction command `\` (backslash). This extraction command is also special as it has to be terminated by a `\` (optionally followed by a conversion command, see below).
 
-**_Note:_** since our query is a string, double backslashes have to be used because of escaping (`\\`).
+**_Note:_** since our query is a string, double backslashes (`\\`) have to be used because of string escaping rules.
 
-As extraction commands, these subqueries must be in the last path segment. Naming the element name and namespace of the node this extraction command is applied to, is optional and automatically defaults to name `x` and namespace `jabber:x:data` as defined by XEP-0004.
+Like other extraction commands, these subqueries must be in the last path segment. Naming the element name and namespace of the node this extraction command is applied to, is optional and automatically defaults to name `x` and namespace `jabber:x:data` as defined by [XEP-0004](https://xmpp.org/extensions/xep-0004.html).
 
-This query language extension has its own small query language tailored to data-forms implemented in `-(id _Nullable) processDataFormQuery:(NSString*) query;`.
+This query language extension is its own small query language tailored to data-forms implemented in `-(id _Nullable) processDataFormQuery:(NSString*) query;`.
 To ease its use, this language reuses some constructs of the main query language, but gives them a new meaning:
 
 - **"Namespace" and "element name":**  
