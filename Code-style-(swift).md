@@ -14,7 +14,8 @@ if true == true or false == false {
 }
 
 // don't use an else branch if not needed because the if branch already returns
-// but: use guard statements if checking for some abort condition to make clear that these are abort conditions
+// but: use guard statements if checking for some abort condition
+// to make clear that these are abort conditions
 if someThing {
     return
 }
