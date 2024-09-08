@@ -5,6 +5,8 @@ Instead, our language, as implemented in Monal, is a strict superset of Prosody'
 # The `MLXMLNode` methods
 All incoming and outgoing XMPP stanzas are parsed to/from an instance of nested `MLXMLNode` elements.
 This class therefore provides some methods for creating such elements as well as querying them.
+The following chapter will briefly introduce some parts of the `MLXMLNode`
+interface before diving into our XML Query Language.
 
 ## Creating an `MLXMLNode`
 There are several initializers for `MLXMLNode`:
