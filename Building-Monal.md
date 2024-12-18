@@ -5,8 +5,9 @@
 - git 
 
 ## Build steps:
-1. clone repo
+1. clone the repos
 ```bash
+git clone https://github.com/monal-im/ExyteChat.git
 git clone https://github.com/monal-im/Monal.git
 cd Monal
 ```
