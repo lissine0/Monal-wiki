@@ -28,7 +28,7 @@ pod install --repo-update
 ```bash
 open Monal.xcworkspace
 ```
-6. Add `LibMonalRustSwiftBridge` as a local project, if not present: In Xcode, go to `File -> Add packages... -> Add local` , select the `rust/LibMonalRustSwiftBridge` directory under Monal's source tree. Make sure that Monal is selected in `Add to project` and the selected target is `monalxmpp` and finally add the package.
+6. Add `LibMonalRustSwiftBridge` as a local project, if not present: In Xcode, go to `File -> Add Package Dependencies... -> Add local` , select the `rust/LibMonalRustSwiftBridge` directory under Monal's source tree. Make sure that Monal is selected in `Add to project` and the selected target is `monalxmpp` and finally add the package.
 
 7. Build :)
 
