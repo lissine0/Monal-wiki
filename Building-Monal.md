@@ -67,6 +67,7 @@ In the terminal type `brew install cocoapods`
 
 # Setting up RUST
 1. Install rustup by running `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh` as mentioned in https://www.rust-lang.org/tools/install
+Make sure to customize the installation and pick the nightly toolchain.
 2. Assuming we're in monal's source directory, run `chmod +x rust/build-rust.sh` to make the script executable
 3. Assuming we're in monal's source directory, run `rust/build-rust.sh` to build our rust lib. If the following error pops up, follow the first answer here: https://stackoverflow.com/questions/68565356/xcrun-error-sdk-iphoneos-cannot-be-located  
     `error: failed to get iphoneos SDK path: process exit with error: xcrun: error: SDK "iphoneos" cannot be located`  
